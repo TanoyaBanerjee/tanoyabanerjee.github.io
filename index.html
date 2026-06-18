@@ -28,7 +28,7 @@
 
         /* Уменьшенный шрифт для имени Таноя Банерджи */
         h1.mb-0 {
-            font-size: 4rem !important; /* Было намного крупнее, теперь аккуратнее */
+            font-size: 4rem !important; 
             line-height: 1.1;
         }
         @media (max-width: 768px) {
@@ -65,8 +65,23 @@
            ========================================== */
         .text-primary { color: #e24343 !important; }
         .bg-primary { background-color: #e24343 !important; }
-        .heading-border { border-bottom: 2px solid #e24343 !important; }
-        .btn-general.btn-green.active, .btn-general.btn-green:hover { background-color: #e24343 !important; border-color: #e24343 !important; }
+        
+        /* Исправленный цвет разделительных полос под заголовками */
+        .heading-border, .heading-border-light { 
+            background-color: #e24343 !important; 
+            border-bottom: 2px solid #e24343 !important; 
+        }
+        
+        /* Переопределение цвета кнопок в разделе Проекты (надписи и рамки) */
+        .btn-general.btn-green {
+            color: #e24343 !important;
+            border-color: #e24343 !important;
+        }
+        .btn-general.btn-green.active, .btn-general.btn-green:hover { 
+            background-color: #e24343 !important; 
+            border-color: #e24343 !important; 
+            color: #ffffff !important;
+        }
 
         /* ==========================================
            4. ЦВЕТ ТЕКСТА "ОБО МНЕ" 
