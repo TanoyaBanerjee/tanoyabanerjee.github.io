@@ -20,16 +20,48 @@
 
     <style>
         /* ==========================================
-           1. РЕШЕНИЕ ПРОБЛЕМЫ СО ШРИФТАМИ 
-           Принудительно ставим красивый шрифт без засечек 
+           1. ШРИФТ И РАЗМЕР ИМЕНИ
            ========================================== */
         body, h1, h2, h3, h4, h5, h6, .content__name, .main-item__title, .title, .subheading {
             font-family: 'Open Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
         }
 
+        /* Уменьшенный шрифт для имени Таноя Банерджи */
+        h1.mb-0 {
+            font-size: 4rem !important; /* Было намного крупнее, теперь аккуратнее */
+            line-height: 1.1;
+        }
+        @media (max-width: 768px) {
+            h1.mb-0 {
+                font-size: 2.8rem !important;
+            }
+        }
+
         /* ==========================================
-           2. ИЗМЕНЕНИЕ ОСНОВНОГО ЦВЕТА
-           Замени код #e24343 на любой другой HEX-код (например, #20c997 для мятного или #6f42c1 для фиолетового)
+           2. ВЫРАВНИВАНИЕ КАРТОЧЕК ОПЫТА ПО ВЫСОТЕ
+           ========================================== */
+        #experience .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .resume-item {
+            display: flex !important;
+            align-items: stretch;
+        }
+        .resume-item .card {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+            height: calc(100% - 3rem); /* Учитываем нижний отступ mb-5 */
+            margin-bottom: 3rem !important;
+        }
+        .resume-content {
+            flex-grow: 1;
+        }
+
+        /* ==========================================
+           3. ИЗМЕНЕНИЕ ОСНОВНОГО ЦВЕТА
            ========================================== */
         .text-primary { color: #e24343 !important; }
         .bg-primary { background-color: #e24343 !important; }
@@ -40,11 +72,10 @@
            4. ЦВЕТ ТЕКСТА "ОБО МНЕ" 
            ========================================== */
         .about-text { 
-            color: #343a40 !important; /* Темный цвет, как у имени */
+            color: #343a40 !important; 
             font-weight: 500;
         }
         
-        /* Выравнивание блока контактов */
         .contact-centered {
             margin: 0 auto;
             max-width: 600px;
