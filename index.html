@@ -2,114 +2,737 @@
 <html lang="ru">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Tanoya Banerjee Portfolio - Senior System Analyst">
-    <meta name="author" content="Tanoya Banerjee">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Tanoya Banerjee Portfolio - Senior System Analyst">
+    <meta name="author" content="Tanoya Banerjee">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
-    <title>Таноя Банерджи — Портфолио</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    <title>Таноя Банерджи — Портфолио</title>
 
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/devicons/css/devicons.min.css" rel="stylesheet">
-    <link href="css/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="css/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
-    <style>
-        body, h1, h2, h3, h4, h5, h6, .content__name, .main-item__title, .title, .subheading { font-family: 'Open Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important; }
-        h1.mb-0 { font-size: 4rem !important; line-height: 1.1; }
-        @media (max-width: 768px) { h1.mb-0 { font-size: 2.8rem !important; } }
-        #experience .row { display: flex; flex-wrap: wrap; }
-        .resume-item { display: flex !important; align-items: stretch; }
-        .resume-item .card { display: flex !important; flex-direction: column !important; justify-content: space-between !important; width: 100% !important; height: calc(100% - 3rem); margin-bottom: 3rem !important; }
-        .text-primary { color: #6b2828 !important; }
-        .bg-primary { background-color: #6b2828 !important; }
-        .heading-border { background-color: #6b2828 !important; border-bottom: 2px solid #6b2828 !important; }
-        .btn-general.btn-green { color: #6b2828 !important; border-color: #6b2828 !important; }
-        .btn-general.btn-green.active, .btn-general.btn-green:hover { background-color: #6b2828 !important; color: #ffffff !important; }
-        .portfolio-item .portfolio-link .caption-port { background-color: rgba(107, 40, 40, 0.9) !important; }
-        .lang-switcher { position: fixed; top: 20px; right: 30px; z-index: 9999; background: rgba(255, 255, 255, 0.9); padding: 8px 15px; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        body.ru .en { display: none !important; }
-        body.en .ru { display: none !important; }
-        .portfolio-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-    </style>
+    <style>
+        /* ==========================================
+           1. ШРИФТЫ И РАЗМЕР ИМЕНИ
+           ========================================== */
+        body, h1, h2, h3, h4, h5, h6, .content__name, .main-item__title, .title, .subheading {
+            font-family: 'Open Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+        }
+
+        h1.mb-0 {
+            font-size: 4rem !important; 
+            line-height: 1.1;
+        }
+        @media (max-width: 768px) {
+            h1.mb-0 {
+                font-size: 2.8rem !important;
+            }
+        }
+
+        /* ==========================================
+           2. ВЫРАВНИВАНИЕ КАРТОЧЕК ОПЫТА ПО ВЫСОТЕ
+           ========================================== */
+        #experience .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .resume-item {
+            display: flex !important;
+            align-items: stretch;
+        }
+        .resume-item .card {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+            height: calc(100% - 3rem); 
+            margin-bottom: 3rem !important;
+        }
+        .resume-content {
+            flex-grow: 1;
+        }
+
+        /* ==========================================
+           3. ИЗМЕНЕНИЕ ОСНОВНОГО ЦВЕТА
+           ========================================== */
+        .text-primary { color: #6b2828 !important; }
+        .bg-primary { background-color: #6b2828 !important; }
+        
+        .heading-border, .heading-border-light { 
+            background-color: #6b2828 !important; 
+            border-bottom: 2px solid #6b2828 !important; 
+        }
+        
+        .btn-general.btn-green {
+            color: #6b2828 !important;
+            border-color: #6b2828 !important;
+        }
+        .btn-general.btn-green.active, .btn-general.btn-green:hover { 
+            background-color: #6b2828 !important; 
+            border-color: #6b2828 !important; 
+            color: #ffffff !important;
+        }
+
+        .about-text { 
+            color: #343a40 !important; 
+            font-weight: 500;
+        }
+        
+        .contact-centered {
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        /* ==========================================
+           4. ЖЕСТКОЕ ПЕРЕОПРЕДЕЛЕНИЕ СИНЕГО ЦВЕТА
+           ========================================== */
+        /* Раздел "Проекты/Сертификаты" - цвет полупрозрачной заливки при наведении */
+        .portfolio-item .portfolio-link .caption-port {
+            background-color: rgba(107, 40, 40, 0.9) !important;
+        }
+        
+        /* Раздел "Образование" - убираем синий из заголовков и иконок */
+        .award .title, .award h5.title, .award h5 {
+            color: #6b2828 !important;
+        }
+        .main-award .award-icon {
+            background-color: #fff !important;
+            border-color: #6b2828 !important;
+            border: 3px solid #6b2828 !important;
+        }
+        .main-award .award:hover .award-icon {
+            background-color: #6b2828 !important;
+            border-color: #6b2828 !important;
+        }
+        
+        /* Фикс для ромбиков на самой линии таймлайна */
+        .main-award .award::before, .main-award .award::after,
+        .award-icon::before, .award-icon::after {
+            background-color: #6b2828 !important;
+            border-color: #6b2828 !important;
+        }
+        
+        /* ФИКС: Маленький ромбик-соединитель от карточки к линии таймлайна */
+        .main-award .award-content::before,
+        .main-award .award-content::after {
+            background-color: #6b2828 !important;
+        }
+        .main-award .award:nth-child(odd) .award-content::before,
+        .main-award .award:nth-child(odd) .award-content::after {
+            border-left-color: #6b2828 !important;
+        }
+        .main-award .award:nth-child(even) .award-content::before,
+        .main-award .award:nth-child(even) .award-content::after {
+            border-right-color: #6b2828 !important;
+        }
+
+        /* ==========================================
+           5. ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ
+           ========================================== */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            border: 1px solid #eee;
+        }
+        .lang-switcher a {
+            color: #343a40;
+            text-decoration: none;
+            padding: 0 5px;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .lang-switcher a:hover {
+            color: #6b2828;
+        }
+        .lang-switcher a.active {
+            color: #6b2828;
+            text-decoration: underline;
+        }
+        .lang-switcher span {
+            color: #ccc;
+        }
+        @media (max-width: 991px) {
+            .lang-switcher {
+                top: 15px;
+                right: 80px; 
+                padding: 6px 12px;
+            }
+        }
+
+        /* ==========================================
+           6. ЛОГИКА ОТОБРАЖЕНИЯ ЯЗЫКОВ
+           ========================================== */
+        body.ru .en { display: none !important; }
+        body.en .ru { display: none !important; }
+
+        /* ==========================================
+           7. РАЗМЕР И ОБРЕЗКА КАРТИНОК ПРОЕКТОВ
+           ========================================== */
+        .portfolio-item img {
+            width: 100%;
+            aspect-ratio: 4 / 3; /* Задает пропорции плитки */
+            object-fit: cover; /* Заполняет рамку без искажений */
+            object-position: top; /* Прижимает к верху, обрезая низ */
+        }
+    </style>
 </head>
 
 <body id="page-top" class="ru">
-    <div class="lang-switcher">
-        <a id="btn-ru" class="active" onclick="switchLang('ru')">RU</a> | <a id="btn-en" onclick="switchLang('en')">EN</a>
-    </div>
+    
+    <div class="lang-switcher">
+        <a id="btn-ru" class="active" onclick="switchLang('ru')">RU</a> 
+        <span>|</span> 
+        <a id="btn-en" onclick="switchLang('en')">EN</a>
+    </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Обо мне</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Опыт</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Сертификаты</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Навыки</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Образование</a></li>
-            </ul>
-        </div>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none mx-0 px-0">
+            <h3 class="text-white">
+                <span class="ru">Таноя Банерджи</span>
+                <span class="en">Tanoya Banerjee</span>
+            </h3>
+        </span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="Avatar">
+        </span>
+      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">
+                        <span class="ru">Обо мне</span><span class="en">About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#experience">
+                        <span class="ru">Опыт работы</span><span class="en">Experience</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#portfolio">
+                        <span class="ru">Сертификаты</span><span class="en">Certificates</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#skills">
+                        <span class="ru">Навыки</span><span class="en">Skills</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#education">
+                        <span class="ru">Образование</span><span class="en">Education</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#contact">
+                        <span class="ru">Контакты</span><span class="en">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="container-fluid p-0">
-        <section class="resume-section p-5" id="about">
-            <h1>Таноя Банерджи</h1>
-            <p>Senior System Analyst (DWH & AI).</p>
-        </section>
+    <div class="container-fluid p-0">
 
-        <section class="resume-section p-5" id="experience">
-            <h2>Опыт работы</h2>
-            <div class="row">
-                <div class="col-md-6"><div class="card p-4"><h4>АО "НСИС"</h4><p>Senior System Analyst DWH & AI. Разработка GenAI и RAG-пайплайнов.</p></div></div>
-                <div class="col-md-6"><div class="card p-4"><h4>АО "Топ Системы"</h4><p>Senior System Analyst. Оптимизация интеграций и миграций данных.</p></div></div>
-                <div class="col-md-6"><div class="card p-4"><h4>ООО "Группа Полипластик"</h4><p>Middle System Analyst. Автоматизация тестов и моделирование данных.</p></div></div>
-                <div class="col-md-6"><div class="card p-4"><h4>АО НИИСТ</h4><p>Системный аналитик SAP. Внедрение модулей планирования.</p></div></div>
-            </div>
-        </section>
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+          <div class="my-auto" >
+              <h1 class="mb-0">
+                  <span class="ru">Таноя</span><span class="en">Tanoya</span>
+                  <span class="text-primary ru">Банерджи</span><span class="text-primary en">Banerjee</span>
+              </h1>
+              <div class="subheading mb-5">
+                  <span class="ru">Ведущий системный аналитик (DWH & AI) · Москва · </span>
+                  <span class="en">Senior System Analyst (DWH & AI) · Moscow · </span>
+                  <a href="mailto:tanoyabaner@mail.ru" class="text-primary">tanoyabaner@mail.ru</a>
+              </div>
+              <p class="mb-4 about-text ru" style="max-width: 700px;">
+                  Более 4 лет опыта работы в качестве Senior System и Business Analyst в высоконагруженных DWH, корпоративных интеграциях и AI-платформах. Имею сильный бэкграунд в PM & BA: декомпозирую комплексные требования, оцениваю риски и управляю ожиданиями стейкхолдеров
+              </p>
+              <p class="mb-4 about-text en" style="max-width: 700px;">
+                  Over 4 years of experience as a Senior System and Business Analyst in high-load DWH, corporate integrations, and AI platforms. Strong background in PM & BA: decomposing complex requirements, assessing risks, and managing stakeholder expectations
+              </p>
 
-        <section class="resume-section p-5" id="portfolio">
-            <h2>Сертификаты</h2>
-            <div class="mb-4">
-                <button class="btn btn-general btn-green filter-b active" data-filter="all">Все</button>
-                <button class="btn btn-general btn-green filter-b" data-filter="pdm">PDM</button>
-                <button class="btn btn-general btn-green filter-b" data-filter="ai">AI</button>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item filter pdm"><a href="#modal1" data-toggle="modal"><img src="img/portfolio/p-1.jpg" class="img-fluid"></a></div>
-                <div class="col-sm-4 portfolio-item filter pdm"><a href="#modal2" data-toggle="modal"><img src="img/portfolio/p-2.jpg" class="img-fluid"></a></div>
-                <div class="col-sm-4 portfolio-item filter pdm"><a href="#modal3" data-toggle="modal"><img src="img/portfolio/p-3.jpg" class="img-fluid"></a></div>
-                <div class="col-sm-4 portfolio-item filter ai"><a href="#modal4" data-toggle="modal"><img src="img/portfolio/p-4.jpg" class="img-fluid"></a></div>
-                <div class="col-sm-4 portfolio-item filter ai"><a href="#modal5" data-toggle="modal"><img src="img/portfolio/p-5.jpg" class="img-fluid"></a></div>
-                <div class="col-sm-4 portfolio-item filter ai"><a href="#modal6" data-toggle="modal"><img src="img/portfolio/p-6.jpg" class="img-fluid"></a></div>
-            </div>
-        </section>
-    </div>
+              <p class="mb-5 about-text ru" style="max-width: 700px;">
+                  Отлично справляюсь с одновременным ведением нескольких проектов. Умею находить общий язык со всеми участниками процесса и успешно улаживаю конфликты (Бизнес vs ИБ vs Архитектура)
+              </p>
+              <p class="mb-5 about-text en" style="max-width: 700px;">
+                  I excel at managing multiple projects simultaneously. I easily find common ground with all process participants and successfully resolve conflicts (Business vs. InfoSec vs. Architecture)
+              </p>
+              
+              <ul class="list-inline list-social-icons mb-0">
+                  <li class="list-inline-item">
+                      <a href="https://www.linkedin.com/in/tanoya-banerjee-772018372" target="_blank">
+                          <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                          </span>
+                      </a>
+                  </li>
+                  <li class="list-inline-item">
+                      <a href="https://t.me/Tanoyaa" target="_blank">
+                          <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                          </span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </section>
 
-    <script>
-        // Генерация 6 модальных окон (повторите для 1-6)
-        for(let i=1; i<=6; i++) {
-            document.write(`
-            <div class="modal fade" id="modal${i}" tabindex="-1">
-                <div class="modal-dialog"><div class="modal-content"><div class="modal-body">
-                    <h3>Сертификат ${i}</h3>
-                    <button data-dismiss="modal">Закрыть</button>
-                </div></div></div>
-            </div>`);
-        }
-    </script>
+    <section class="resume-section p-3 p-lg-5 " id="experience">
+          <div class="row my-auto">
+              <div class="col-12">
+                <h2 class="text-center">
+                    <span class="ru">Опыт работы</span><span class="en">Experience</span>
+                </h2>
+                <div class="mb-5 heading-border"></div>
+              </div>
+              
+              <div class="resume-item col-md-6 col-sm-12 "> 
+                <div class="card mx-0 p-4 mb-5" style="border-color: #17a2b8; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
+                  <div class="resume-content mr-auto">
+                      <h4 class="mb-3"><i class="fa fa-database mr-3 text-info"></i> Senior System Analyst DWH & AI</h4>
+                      <h5 class="mb-2">
+                          <span class="ru">АО "НСИС" (ДО ЦБ РФ)</span>
+                          <span class="en">JSC "NSIS" (Subsidiary of CBR)</span>
+                      </h5>
+                      <p class="ru">Разрешила противоречия стейкхолдеров (Бизнес vs ИБ) для запуска генеративного AI-ассистента на LLM (Qwen/Claude). Ускорила работу витрин данных в 3 раза за счет миграции с PostgreSQL на ClickHouse. Спроектировала RAG-пайплайны с векторным поиском</p>
+                      <p class="en">Resolved stakeholder conflicts (Business vs. InfoSec) to launch a generative AI assistant based on LLMs (Qwen/Claude). Accelerated data mart performance by 3x by migrating from PostgreSQL to ClickHouse. Designed RAG pipelines with vector search</p>
+                  </div>
+                  <div class="resume-date text-md-right">
+                      <span class="text-primary ru">Апр 2026 - н.вр.</span>
+                      <span class="text-primary en">Apr 2026 - Present</span>
+                  </div>
+                </div>  
+              </div>
+              
+              <div class="resume-item col-md-6 col-sm-12">
+                <div class="card mx-0 p-4 mb-5" style="border-color: #ffc107; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
+                  <div class="resume-content mr-auto">
+                      <h4 class="mb-3"><i class="fa fa-sitemap mr-3 text-warning"></i> Senior System Analyst</h4>
+                      <h5 class="mb-2">
+                          <span class="ru">АО "Топ Системы" (лидер в PLM в РФ)</span>
+                          <span class="en">JSC "Top Systems" (PLM leader in RF)</span>
+                      </h5>
+                      <p class="ru">Устранила интеграционные узкие места при миграции данных Роскосмоса: окно миграции меньше на 60%, нагрузка на CPU на 50%. Разработала интеграцию с 1C ERP через REST API, ускорив выпуск техдокументации в 2 раза</p>
+                      <p class="en">Eliminated integration bottlenecks during the Roscosmos data migration: reduced migration window by 60% and CPU load by 50%. Developed integration with 1C ERP via REST API, accelerating technical documentation release by 2x</p>
+                  </div>
+                  <div class="resume-date text-md-right">
+                      <span class="text-primary ru">Дек 2024 - Апр 2026</span>
+                      <span class="text-primary en">Dec 2024 - Apr 2026</span>
+                  </div>
+                </div>  
+              </div>
+              
+              <div class="resume-item col-md-6 col-sm-12">
+                <div class="card mx-0 p-4 mb-5" style="border-color: #28a745; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
+                  <div class="resume-content mr-auto">
+                      <h4 class="mb-3"><i class="fa fa-code-fork mr-3 text-success"></i> Middle System Analyst</h4>
+                      <h5 class="mb-2">
+                          <span class="ru">ООО "Группа Полипластик" (лидер в ПНДТ в РФ)</span>
+                          <span class="en">LLC "Polyplastic Group"</span>
+                      </h5>
+                      <p class="ru">Сократила TTM на 50% и устранила баги на проде, автоматизировав интеграционные тесты через Postman в CI/CD. Спроектировала физическую и логическую модель данных PostgreSQL (3НФ), исключив аномалии обновлений</p>
+                      <p class="en">Reduced TTM by 50% and eliminated production bugs by automating integration tests via Postman in CI/CD. Designed physical and logical data models in PostgreSQL (3NF), eliminating update anomalies</p>
+                  </div>
+                  <div class="resume-date text-md-right">
+                      <span class="text-primary ru">Июн 2023 - Дек 2024</span>
+                      <span class="text-primary en">Jun 2023 - Dec 2024</span>
+                  </div>
+                </div>  
+              </div>
+              
+              <div class="resume-item col-md-6 col-sm-12">
+                <div class="card mx-0 p-4 mb-5" style="border-color: #2196f3; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
+                  <div class="resume-content mr-auto">
+                      <h4 class="mb-3"><i class="fa fa-cogs mr-3 text-primary"></i> Системный аналитик SAP</h4>
+                      <h5 class="mb-2">
+                          <span class="ru">АО НИИСТ</span>
+                          <span class="en">JSC "NIIST"</span>
+                      </h5>
+                      <p class="ru">Внедрила модуль планирования ERP в срок, сократив рутинные трудозатраты смежных отделов. Снизила процент доработок на UAT, внедрив матрицу трассируемости требований. Разрабатывала ТЗ и маппинг данных</p>
+                      <p class="en">Implemented the ERP planning module on time, reducing routine labor costs for adjacent departments. Decreased the UAT rework rate by introducing a requirements traceability matrix. Developed technical specs and data mapping</p>
+                  </div>
+                  <div class="resume-date text-md-right">
+                      <span class="text-primary ru">Фев 2022 - Апр 2023</span>
+                      <span class="text-primary en">Feb 2022 - Apr 2023</span>
+                  </div>
+                </div>  
+              </div>
+              
+          </div>
+      </section>
 
-    <script src="js/jquery/jquery.min.js"></script>
-    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script>
-        $(".filter-b").click(function(){
-            var val = $(this).attr('data-filter');
-            val == "all" ? $('.filter').show() : ($(".filter").hide(), $('.filter.'+val).show());
-        });
-        function switchLang(lang) { document.body.className = lang; }
-    </script>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="portfolio"> 
+          <div class="row my-auto">
+              <div class="col-12">
+                <h2 class="text-center">
+                    <span class="ru">Сертификаты</span>
+                    <span class="en">Certificates</span>
+                </h2>
+                <div class="mb-5 heading-border"></div>
+              </div>
+              <div class="col-md-12">
+                <p class="text-center ru">Здесь ты можешь добавить свои сертификаты, дипломы и подтверждения пройденных курсов</p>
+                <p class="text-center en">Here you can find my certificates, diplomas, and course completion records</p>
+                <div class="port-head-cont">
+                  <button class="btn btn-general btn-green filter-b active" data-filter="all">
+                      <span class="ru">Все сертификаты</span><span class="en">All certificates</span>
+                  </button>
+                  <button class="btn btn-general btn-green filter-b" data-filter="dwh">DWH / DB</button>
+                  <button class="btn btn-general btn-green filter-b" data-filter="integrations">
+                      <span class="ru">Интеграции</span><span class="en">Integrations</span>
+                  </button>
+                </div>
+              </div>
+          </div>
+          
+          <div class="row my-auto mt-4">
+              <div class="col-sm-4 portfolio-item filter dwh">
+                  <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+                      <div class="caption-port">
+                          <div class="caption-port-content">
+                              <i class="fa fa-search-plus fa-3x"></i>
+                          </div>
+                      </div>
+                      <img class="img-fluid" src="img/portfolio/p-1.jpg" alt="Сертификат БД">
+                  </a>
+              </div>
+              
+              <div class="col-sm-4 portfolio-item filter integrations">
+                  <a class="portfolio-link" href="#portfolioModal2" data-toggle="modal">
+                      <div class="caption-port">
+                          <div class="caption-port-content">
+                              <i class="fa fa-search-plus fa-3x"></i>
+                          </div>
+                      </div>
+                      <img class="img-fluid" src="img/portfolio/p-2.jpg" alt="Сертификат Интеграции">
+                  </a>
+              </div>
+              
+              <div class="col-sm-4 portfolio-item filter integrations dwh">
+                  <a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
+                      <div class="caption-port">
+                          <div class="caption-port-content">
+                              <i class="fa fa-search-plus fa-3x"></i>
+                          </div>
+                      </div>
+                      <img class="img-fluid" src="img/portfolio/p-3.jpg" alt="Дополнительный сертификат">
+                  </a>
+              </div>
+          </div>
+      </section>
+
+    <section class=" d-flex flex-column" id="skills">
+         <div class="p-lg-5 p-3 skill-cover bg-primary">
+          <h3 class="text-center text-white">
+              <span class="ru">Ключевой стек технологий</span>
+              <span class="en">Key Tech Stack</span>
+          </h3>
+          <div class="row text-center my-auto mt-5"> 
+              <div class="col-md-3 col-sm-6 mb-4">
+                  <div class="skill-item">
+                      <i class="fa fa-database fa-5x"></i>
+                      <h4 class="mt-3 text-white">
+                          <span class="ru">Базы данных</span><span class="en">Databases</span>
+                      </h4>
+                      <p class="text-white">PostgreSQL, ClickHouse, SQL</p>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-4">
+                  <div class="skill-item">
+                      <i class="fa fa-exchange fa-5x"></i>
+                      <h4 class="mt-3 text-white">
+                          <span class="ru">Интеграции</span><span class="en">Integrations</span>
+                      </h4>
+                      <p class="text-white">REST, SOAP, Kafka, RabbitMQ</p>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-4">
+                  <div class="skill-item">
+                      <i class="fa fa-sitemap fa-5x"></i>
+                      <h4 class="mt-3 text-white">
+                          <span class="ru">Анализ</span><span class="en">Analysis</span>
+                      </h4>
+                      <p class="text-white">UML, BPMN 2.0, PlantUML</p>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-4">
+                  <div class="skill-item">
+                      <i class="fa fa-server fa-5x"></i>
+                      <h4 class="mt-3 text-white">DWH & Infra</h4>
+                      <p class="text-white">ETL, Docker, Apache Airflow</p>
+                  </div>
+              </div>
+          </div>
+         </div> 
+      </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+          <div class="row my-auto">
+              <div class="col-12">
+                <h2 class="text-center">
+                    <span class="ru">Образование</span><span class="en">Education</span>
+                </h2>
+                <div class="mb-5 heading-border"></div>
+              </div> 
+              <div class="main-award" id="award-box">
+                  <div class="award">
+                      <div class="award-icon"></div>
+                      <div class="award-content">
+                          <span class="date text-primary">2019 - 2023</span>
+                          <h5 class="title">
+                              <span class="ru">Бакалавриат</span><span class="en">Bachelor's Degree</span>
+                          </h5>
+                          <p class="description ru">
+                              РГУ нефти и газа им. И.М. Губкина. Инженерный факультет<br>
+                              <strong>Диплом с отличием</strong>
+                          </p>
+                          <p class="description en">
+                              Gubkin Russian State University of Oil and Gas. Faculty of Engineering<br>
+                              <strong>Diploma with honors</strong>
+                          </p>
+                      </div>
+                  </div>
+                  <div class="award">
+                      <div class="award-icon"></div>
+                      <div class="award-content">
+                          <span class="date text-primary">2023 - 2025</span>
+                          <h5 class="title">
+                              <span class="ru">Магистратура</span><span class="en">Master's Degree</span>
+                          </h5>
+                          <p class="description ru">
+                              РГУ нефти и газа им. И.М. Губкина. Инженерный факультет<br>
+                              <strong>Диплом с отличием</strong><br>
+                              Автор научных публикаций в рецензируемых журналах, индексируемых в Scopus (Q2) и Web of Science
+                          </p>
+                          <p class="description en">
+                              Gubkin Russian State University of Oil and Gas. Faculty of Engineering<br>
+                              <strong>Diploma with honors</strong><br>
+                              Author of scientific publications in peer-reviewed journals indexed in Scopus (Q2) and Web of Science
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section> 
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column">
+          <div class="row my-auto" id="contact"> 
+            <div class="col-12 contact-centered mt-5"> 
+              <div class="contact-cont2 text-center"> 
+                <h2 class="mb-4">
+                    <span class="ru">Связаться со мной</span><span class="en">Get in Touch</span>
+                </h2>
+                <div class="heading-border mx-auto mb-5"></div>
+                
+                <div class="contact-add contact-box-desc mb-4">
+                  <h3 class="ru"><i class="fa fa-map-marker text-primary fa-2x mb-2"></i><br> Локация</h3>
+                  <h3 class="en"><i class="fa fa-map-marker text-primary fa-2x mb-2"></i><br> Location</h3>
+                  <p class="ru">Москва, Россия</p>
+                  <p class="en">Moscow, Russia</p>
+                </div>
+                <div class="contact-phone contact-side-desc contact-box-desc mb-4">
+                  <h3 class="ru"><i class="fa fa-phone text-primary fa-2x mb-2"></i><br> Телефон</h3>
+                  <h3 class="en"><i class="fa fa-phone text-primary fa-2x mb-2"></i><br> Phone</h3>
+                  <p>+7 (991) 582-08-11</p>
+                </div>
+                <div class="contact-mail contact-side-desc contact-box-desc">
+                  <h3><i class="fa fa-envelope-o text-primary fa-2x mb-2"></i><br> Email</h3>
+                  <p><a href="mailto:tanoyabaner@mail.ru" class="text-primary">tanoyabaner@mail.ru</a></p>
+                  
+                  <ul class="list-inline social-icon-f top-data mt-4">
+                    <li>
+                        <a href="https://www.linkedin.com/in/tanoya-banerjee-772018372" target="_blank">
+                            <i class="fa top-social fa-linkedin" style="color: #6b2828; border-color:#6b2828;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/Tanoyaa" target="_blank">
+                            <i class="fa top-social fa-telegram" style="color: #6b2828; border-color:#6b2828;"></i>
+                        </a>
+                    </li>
+                  </ul>
+                  
+                </div>
+              </div>
+            </div> 
+          </div>
+      </section>
+
+    </div>
+
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" >
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="close-modal" data-dismiss="modal">
+                  <div class="lr">
+                      <div class="rl"></div>
+                  </div>
+              </div>
+              <div class="container">
+                  <div class="row">
+                          <div class="modal-body">
+                              <div class="title-bar">
+                                <div class="col-md-12">
+                                  <h2 class="text-center">
+                                      <span class="ru">Сертификат</span><span class="en">Certificate</span>
+                                  </h2>
+                                  <div class="heading-border"></div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <img class="img-fluid img-centered" src="img/portfolio/p-1.jpg" alt="">
+                                </div>
+                                <div class="col-md-6">
+                                  <p class="ru">Здесь можно добавить подробное описание полученного сертификата или пройденного курса</p>
+                                  <p class="en">Here you can add a detailed description of the received certificate or completed course</p>
+                                  <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
+                                      <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
+                                  </button>
+                              </div>
+                            </div>
+                          </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                            <div class="modal-body">
+                                <div class="title-bar">
+                                  <div class="col-md-12">
+                                    <h2 class="text-center"><span class="ru">Сертификат</span><span class="en">Certificate</span></h2>
+                                    <div class="heading-border"></div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <img class="img-fluid img-centered" src="img/portfolio/p-2.jpg" alt="">
+                                  </div>
+                                  <div class="col-md-6">
+                                    <p class="ru">Описание сертификата по интеграциям или бизнес-процессам</p>
+                                    <p class="en">Description of the certificate for integrations or business processes</p>
+                                    <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
+                                        <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
+                                    </button>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                            <div class="modal-body">
+                                <div class="title-bar">
+                                  <div class="col-md-12">
+                                    <h2 class="text-center">
+                                        <span class="ru">Сертификат</span><span class="en">Certificate</span>
+                                    </h2>
+                                    <div class="heading-border"></div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <img class="img-fluid img-centered" src="img/portfolio/p-3.jpg" alt="">
+                                  </div>
+                                  <div class="col-md-6">
+                                    <p class="ru">Описание дополнительного сертификата</p>
+                                    <p class="en">Description of the additional certificate</p>
+                                    <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
+                                        <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
+                                    </button>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/counter/jquery.waypoints.min.js"></script>
+    <script src="js/counter/jquery.counterup.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Логика фильтров портфолио
+            $(".filter-b").click(function(){
+                var value = $(this).attr('data-filter');
+                if(value == "all") { 
+                    $('.filter').show('1000');
+                } else { 
+                    $(".filter").not('.'+value).hide('3000');
+                    $('.filter').filter('.'+value).show('3000');
+                }
+            });
+
+            // Автоматическое определение языка из URL-параметра при загрузке страницы
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            if (langParam === 'en' || langParam === 'ru') {
+                switchLang(langParam);
+            } else {
+                switchLang('ru'); // язык по умолчанию
+            }
+        });
+
+        // Функция переключения языков без перезагрузки страницы
+        function switchLang(lang) {
+            document.body.className = lang; 
+            
+            document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
+            document.title = lang === 'ru' ? 'Таноя Банерджи — Портфолио' : 'Tanoya Banerjee — Portfolio';
+        }
+    </script> 
 </body>
+
 </html>
