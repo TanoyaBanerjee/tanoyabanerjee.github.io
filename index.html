@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Портфолио Танои Банерджи - Ведущий системный аналитик">
+    <meta name="description" content="Tanoya Banerjee Portfolio - Senior System Analyst">
     <meta name="author" content="Tanoya Banerjee">
 
     <link rel="shortcut icon" href="img/favicon.ico">
@@ -20,13 +20,12 @@
 
     <style>
         /* ==========================================
-           1. ШРИФТ И РАЗМЕР ИМЕНИ
+           1. ШРИФТЫ И РАЗМЕР ИМЕНИ
            ========================================== */
         body, h1, h2, h3, h4, h5, h6, .content__name, .main-item__title, .title, .subheading {
             font-family: 'Open Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
         }
 
-        /* Уменьшенный шрифт для имени Таноя Банерджи */
         h1.mb-0 {
             font-size: 4rem !important; 
             line-height: 1.1;
@@ -38,7 +37,7 @@
         }
 
         /* ==========================================
-           2. ВЫРАВНИВАНИЕ КАРТОЧЕК ОПЫТА ПО ВЫСОТЕ
+           2. ВЫРАВНИВАНИЕ КАРТОЧЕКОК ОПЫТА ПО ВЫСОТЕ
            ========================================== */
         #experience .row {
             display: flex;
@@ -53,7 +52,7 @@
             flex-direction: column !important;
             justify-content: space-between !important;
             width: 100% !important;
-            height: calc(100% - 3rem); /* Учитываем нижний отступ mb-5 */
+            height: calc(100% - 3rem); 
             margin-bottom: 3rem !important;
         }
         .resume-content {
@@ -66,13 +65,11 @@
         .text-primary { color: #6b2828 !important; }
         .bg-primary { background-color: #6b2828 !important; }
         
-        /* Исправленный цвет разделительных полос под заголовками */
         .heading-border, .heading-border-light { 
             background-color: #6b2828 !important; 
             border-bottom: 2px solid #6b2828 !important; 
         }
         
-        /* Переопределение цвета кнопок в разделе Проекты (надписи и рамки) */
         .btn-general.btn-green {
             color: #6b2828 !important;
             border-color: #6b2828 !important;
@@ -83,9 +80,6 @@
             color: #ffffff !important;
         }
 
-        /* ==========================================
-           4. ЦВЕТ ТЕКСТА "ОБО МНЕ" 
-           ========================================== */
         .about-text { 
             color: #343a40 !important; 
             font-weight: 500;
@@ -95,16 +89,74 @@
             margin: 0 auto;
             max-width: 600px;
         }
+
+        /* ==========================================
+           4. ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ
+           ========================================== */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            border: 1px solid #eee;
+        }
+        .lang-switcher a {
+            color: #343a40;
+            text-decoration: none;
+            padding: 0 5px;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .lang-switcher a:hover {
+            color: #6b2828;
+        }
+        .lang-switcher a.active {
+            color: #6b2828;
+            text-decoration: underline;
+        }
+        .lang-switcher span {
+            color: #ccc;
+        }
+        @media (max-width: 991px) {
+            .lang-switcher {
+                top: 15px;
+                right: 80px; 
+                padding: 6px 12px;
+            }
+        }
+
+        /* ==========================================
+           5. ЛОГИКА ОТОБРАЖЕНИЯ ЯЗЫКОВ
+           ========================================== */
+        body.ru .en { display: none !important; }
+        body.en .ru { display: none !important; }
     </style>
 </head>
 
-<body id="page-top">
+<body id="page-top" class="ru">
     
+    <div class="lang-switcher">
+        <a id="btn-ru" class="active" onclick="switchLang('ru')">RU</a> 
+        <span>|</span> 
+        <a id="btn-en" onclick="switchLang('en')">EN</a>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none mx-0 px-0"><h3 class="text-white">Таноя Банерджи</h3></span>
+        <span class="d-block d-lg-none mx-0 px-0">
+            <h3 class="text-white">
+                <span class="ru">Таноя Банерджи</span>
+                <span class="en">Tanoya Banerjee</span>
+            </h3>
+        </span>
         <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="Таноя Банерджи">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="Avatar">
         </span>
       </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -113,22 +165,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">Обо мне</a>
+                    <a class="nav-link js-scroll-trigger" href="#about">
+                        <span class="ru">Обо мне</span><span class="en">About</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#experience">Опыт работы</a>
+                    <a class="nav-link js-scroll-trigger" href="#experience">
+                        <span class="ru">Опыт работы</span><span class="en">Experience</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">Проекты</a>
+                    <a class="nav-link js-scroll-trigger" href="#portfolio">
+                        <span class="ru">Проекты</span><span class="en">Projects</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#skills">Навыки</a>
+                    <a class="nav-link js-scroll-trigger" href="#skills">
+                        <span class="ru">Навыки</span><span class="en">Skills</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#education">Образование</a>
+                    <a class="nav-link js-scroll-trigger" href="#education">
+                        <span class="ru">Образование</span><span class="en">Education</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">Контакты</a>
+                    <a class="nav-link js-scroll-trigger" href="#contact">
+                        <span class="ru">Контакты</span><span class="en">Contact</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -138,18 +202,27 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
           <div class="my-auto" >
-              <h1 class="mb-0">Таноя
-                <span class="text-primary">Банерджи</span>
+              <h1 class="mb-0">
+                  <span class="ru">Таноя</span><span class="en">Tanoya</span>
+                  <span class="text-primary ru">Банерджи</span><span class="text-primary en">Banerjee</span>
               </h1>
               <div class="subheading mb-5">
-                  Ведущий системный аналитик (DWH & AI) · Москва · 
+                  <span class="ru">Ведущий системный аналитик (DWH & AI) · Москва · </span>
+                  <span class="en">Senior System Analyst (DWH & AI) · Moscow · </span>
                   <a href="mailto:tanoyabaner@mail.ru" class="text-primary">tanoyabaner@mail.ru</a>
               </div>
-              <p class="mb-4 about-text" style="max-width: 700px;">
+              <p class="mb-4 about-text ru" style="max-width: 700px;">
                   Более 4 лет опыта работы в качестве Senior System и Business Analyst в высоконагруженных DWH, корпоративных интеграциях и AI-платформах. Имею сильный бэкграунд в PM & BA: декомпозирую комплексные требования, оцениваю риски и управляю ожиданиями стейкхолдеров.
               </p>
-              <p class="mb-5 about-text" style="max-width: 700px;">
+              <p class="mb-4 about-text en" style="max-width: 700px;">
+                  Over 4 years of experience as a Senior System and Business Analyst in high-load DWH, corporate integrations, and AI platforms. Strong background in PM & BA: decomposing complex requirements, assessing risks, and managing stakeholder expectations.
+              </p>
+
+              <p class="mb-5 about-text ru" style="max-width: 700px;">
                   Отлично справляюсь с одновременным ведением нескольких проектов. Умею находить общий язык со всеми участниками процесса и успешно улаживаю конфликты (Бизнес vs ИБ vs Архитектура).
+              </p>
+              <p class="mb-5 about-text en" style="max-width: 700px;">
+                  I excel at managing multiple projects simultaneously. I easily find common ground with all process participants and successfully resolve conflicts (Business vs. InfoSec vs. Architecture).
               </p>
               <ul class="list-inline list-social-icons mb-0">
                   <li class="list-inline-item">
@@ -167,7 +240,9 @@
     <section class="resume-section p-3 p-lg-5 " id="experience">
           <div class="row my-auto">
               <div class="col-12">
-                <h2 class="text-center">Опыт работы</h2>
+                <h2 class="text-center">
+                    <span class="ru">Опыт работы</span><span class="en">Experience</span>
+                </h2>
                 <div class="mb-5 heading-border"></div>
               </div>
               
@@ -175,11 +250,16 @@
                 <div class="card mx-0 p-4 mb-5" style="border-color: #17a2b8; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
                   <div class="resume-content mr-auto">
                       <h4 class="mb-3"><i class="fa fa-database mr-3 text-info"></i> Senior System Analyst DWH & AI</h4>
-                      <h5 class="mb-2">АО "НСИС" (ДО ЦБ РФ)</h5>
-                      <p>Разрешила противоречия стейкхолдеров (Бизнес vs ИБ) для запуска генеративного AI-ассистента на LLM (Qwen/Claude). Ускорила работу витрин данных в 3 раза за счет миграции с PostgreSQL на ClickHouse. Спроектировала RAG-пайплайны с векторным поиском.</p>
+                      <h5 class="mb-2">
+                          <span class="ru">АО "НСИС" (ДО ЦБ РФ)</span>
+                          <span class="en">JSC "NSIS" (Subsidiary of CBR)</span>
+                      </h5>
+                      <p class="ru">Разрешила противоречия стейкхолдеров (Бизнес vs ИБ) для запуска генеративного AI-ассистента на LLM (Qwen/Claude). Ускорила работу витрин данных в 3 раза за счет миграции с PostgreSQL на ClickHouse. Спроектировала RAG-пайплайны с векторным поиском.</p>
+                      <p class="en">Resolved stakeholder conflicts (Business vs. InfoSec) to launch a generative AI assistant based on LLMs (Qwen/Claude). Accelerated data mart performance by 3x by migrating from PostgreSQL to ClickHouse. Designed RAG pipelines with vector search.</p>
                   </div>
                   <div class="resume-date text-md-right">
-                      <span class="text-primary">Апр 2026 - н.вр.</span>
+                      <span class="text-primary ru">Апр 2026 - н.вр.</span>
+                      <span class="text-primary en">Apr 2026 - Present</span>
                   </div>
                 </div>  
               </div>
@@ -188,11 +268,16 @@
                 <div class="card mx-0 p-4 mb-5" style="border-color: #ffc107; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
                   <div class="resume-content mr-auto">
                       <h4 class="mb-3"><i class="fa fa-sitemap mr-3 text-warning"></i> Senior System Analyst</h4>
-                      <h5 class="mb-2">АО "Топ Системы" (лидер в PLM в РФ)</h5>
-                      <p>Устранила интеграционные узкие места при миграции данных Роскосмоса: окно миграции меньше на 60%, нагрузка на CPU на 50%. Разработала интеграцию с 1C ERP через REST API, ускорив выпуск техдокументации в 2 раза.</p>
+                      <h5 class="mb-2">
+                          <span class="ru">АО "Топ Системы" (лидер в PLM в РФ)</span>
+                          <span class="en">JSC "Top Systems" (PLM leader in RF)</span>
+                      </h5>
+                      <p class="ru">Устранила интеграционные узкие места при миграции данных Роскосмоса: окно миграции меньше на 60%, нагрузка на CPU на 50%. Разработала интеграцию с 1C ERP через REST API, ускорив выпуск техдокументации в 2 раза.</p>
+                      <p class="en">Eliminated integration bottlenecks during the Roscosmos data migration: reduced migration window by 60% and CPU load by 50%. Developed integration with 1C ERP via REST API, accelerating technical documentation release by 2x.</p>
                   </div>
                   <div class="resume-date text-md-right">
-                      <span class="text-primary">Дек 2024 - Апр 2026</span>
+                      <span class="text-primary ru">Дек 2024 - Апр 2026</span>
+                      <span class="text-primary en">Dec 2024 - Apr 2026</span>
                   </div>
                 </div>  
               </div>
@@ -201,11 +286,16 @@
                 <div class="card mx-0 p-4 mb-5" style="border-color: #28a745; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
                   <div class="resume-content mr-auto">
                       <h4 class="mb-3"><i class="fa fa-code-fork mr-3 text-success"></i> Middle System Analyst</h4>
-                      <h5 class="mb-2">ООО "Группа Полипластик" (лидер в ПНДТ в РФ)</h5>
-                      <p>Сократила TTM на 50% и устранила баги на проде, автоматизировав интеграционные тесты через Postman в CI/CD. Спроектировала физическую и логическую модель данных PostgreSQL (3НФ), исключив аномалии обновлений.</p>
+                      <h5 class="mb-2">
+                          <span class="ru">ООО "Группа Полипластик" (лидер в ПНДТ в РФ)</span>
+                          <span class="en">LLC "Polyplastic Group"</span>
+                      </h5>
+                      <p class="ru">Сократила TTM на 50% и устранила баги на проде, автоматизировав интеграционные тесты через Postman в CI/CD. Спроектировала физическую и логическую модель данных PostgreSQL (3НФ), исключив аномалии обновлений.</p>
+                      <p class="en">Reduced TTM by 50% and eliminated production bugs by automating integration tests via Postman in CI/CD. Designed physical and logical data models in PostgreSQL (3NF), eliminating update anomalies.</p>
                   </div>
                   <div class="resume-date text-md-right">
-                      <span class="text-primary">Июн 2023 - Дек 2024</span>
+                      <span class="text-primary ru">Июн 2023 - Дек 2024</span>
+                      <span class="text-primary en">Jun 2023 - Dec 2024</span>
                   </div>
                 </div>  
               </div>
@@ -214,11 +304,16 @@
                 <div class="card mx-0 p-4 mb-5" style="border-color: #2196f3; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
                   <div class="resume-content mr-auto">
                       <h4 class="mb-3"><i class="fa fa-cogs mr-3 text-primary"></i> Системный аналитик SAP</h4>
-                      <h5 class="mb-2">АО НИИСТ</h5>
-                      <p>Внедрила модуль планирования ERP в срок, сократив рутинные трудозатраты смежных отделов. Снизила процент доработок на UAT, внедрив матрицу трассируемости требований. Разрабатывала ТЗ и маппинг данных.</p>
+                      <h5 class="mb-2">
+                          <span class="ru">АО НИИСТ</span>
+                          <span class="en">JSC "NIIST"</span>
+                      </h5>
+                      <p class="ru">Внедрила модуль планирования ERP в срок, сократив рутинные трудозатраты смежных отделов. Снизила процент доработок на UAT, внедрив матрицу трассируемости требований. Разрабатывала ТЗ и маппинг данных.</p>
+                      <p class="en">Implemented the ERP planning module on time, reducing routine labor costs for adjacent departments. Decreased the UAT rework rate by introducing a requirements traceability matrix. Developed technical specs and data mapping.</p>
                   </div>
                   <div class="resume-date text-md-right">
-                      <span class="text-primary">Фев 2022 - Апр 2023</span>
+                      <span class="text-primary ru">Фев 2022 - Апр 2023</span>
+                      <span class="text-primary en">Feb 2022 - Apr 2023</span>
                   </div>
                 </div>  
               </div>
@@ -229,15 +324,23 @@
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="portfolio"> 
           <div class="row my-auto">
               <div class="col-12">
-                <h2 class="text-center">Архитектура и Проекты</h2>
+                <h2 class="text-center">
+                    <span class="ru">Архитектура и Проекты</span>
+                    <span class="en">Architecture & Projects</span>
+                </h2>
                 <div class="mb-5 heading-border"></div>
               </div>
               <div class="col-md-12">
-                <p class="text-center">Здесь ты можешь добавить скриншоты диаграмм UML, BPMN, ER-моделей или архитектурных схем (Kafka, DWH).</p>
+                <p class="text-center ru">Здесь ты можешь добавить скриншоты диаграмм UML, BPMN, ER-моделей или архитектурных схем (Kafka, DWH).</p>
+                <p class="text-center en">Here you can find screenshots of UML, BPMN, ER diagrams, or architectural schemas (Kafka, DWH).</p>
                 <div class="port-head-cont">
-                  <button class="btn btn-general btn-green filter-b active" data-filter="all">Все схемы</button>
-                  <button class="btn btn-general btn-green filter-b" data-filter="dwh">DWH / БД</button>
-                  <button class="btn btn-general btn-green filter-b" data-filter="integrations">Интеграции</button>
+                  <button class="btn btn-general btn-green filter-b active" data-filter="all">
+                      <span class="ru">Все схемы</span><span class="en">All schemas</span>
+                  </button>
+                  <button class="btn btn-general btn-green filter-b" data-filter="dwh">DWH / DB</button>
+                  <button class="btn btn-general btn-green filter-b" data-filter="integrations">
+                      <span class="ru">Интеграции</span><span class="en">Integrations</span>
+                  </button>
                 </div>
               </div>
           </div>
@@ -268,33 +371,42 @@
 
     <section class=" d-flex flex-column" id="skills">
          <div class="p-lg-5 p-3 skill-cover bg-primary">
-          <h3 class="text-center text-white">Ключевой стек технологий</h3>
+          <h3 class="text-center text-white">
+              <span class="ru">Ключевой стек технологий</span>
+              <span class="en">Key Tech Stack</span>
+          </h3>
           <div class="row text-center my-auto mt-5"> 
               <div class="col-md-3 col-sm-6 mb-4">
                   <div class="skill-item">
                       <i class="fa fa-database fa-5x"></i>
-                      <h4 class="mt-3 text-white">Базы данных</h4>
+                      <h4 class="mt-3 text-white">
+                          <span class="ru">Базы данных</span><span class="en">Databases</span>
+                      </h4>
                       <p class="text-white">PostgreSQL, ClickHouse, SQL</p>
                   </div>
               </div>
               <div class="col-md-3 col-sm-6 mb-4">
                   <div class="skill-item">
                       <i class="fa fa-exchange fa-5x"></i>
-                      <h4 class="mt-3 text-white">Интеграции</h4>
+                      <h4 class="mt-3 text-white">
+                          <span class="ru">Интеграции</span><span class="en">Integrations</span>
+                      </h4>
                       <p class="text-white">REST, SOAP, Kafka, RabbitMQ</p>
                   </div>
               </div>
               <div class="col-md-3 col-sm-6 mb-4">
                   <div class="skill-item">
                       <i class="fa fa-sitemap fa-5x"></i>
-                      <h4 class="mt-3 text-white">Анализ</h4>
+                      <h4 class="mt-3 text-white">
+                          <span class="ru">Анализ</span><span class="en">Analysis</span>
+                      </h4>
                       <p class="text-white">UML, BPMN 2.0, PlantUML</p>
                   </div>
               </div>
               <div class="col-md-3 col-sm-6 mb-4">
                   <div class="skill-item">
                       <i class="fa fa-server fa-5x"></i>
-                      <h4 class="mt-3 text-white">DWH & Инфра</h4>
+                      <h4 class="mt-3 text-white">DWH & Infra</h4>
                       <p class="text-white">ETL, Docker, Apache Airflow</p>
                   </div>
               </div>
@@ -305,7 +417,9 @@
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
           <div class="row my-auto">
               <div class="col-12">
-                <h2 class="text-center">Образование</h2>
+                <h2 class="text-center">
+                    <span class="ru">Образование</span><span class="en">Education</span>
+                </h2>
                 <div class="mb-5 heading-border"></div>
               </div> 
               <div class="main-award" id="award-box">
@@ -313,10 +427,16 @@
                       <div class="award-icon"></div>
                       <div class="award-content">
                           <span class="date text-primary">2019 - 2023</span>
-                          <h5 class="title">Бакалавриат</h5>
-                          <p class="description">
+                          <h5 class="title">
+                              <span class="ru">Бакалавриат</span><span class="en">Bachelor's Degree</span>
+                          </h5>
+                          <p class="description ru">
                               РГУ нефти и газа им. И.М. Губкина. Инженерный факультет.<br>
                               <strong>Диплом с отличием.</strong>
+                          </p>
+                          <p class="description en">
+                              Gubkin Russian State University of Oil and Gas. Faculty of Engineering.<br>
+                              <strong>Diploma with honors.</strong>
                           </p>
                       </div>
                   </div>
@@ -324,11 +444,18 @@
                       <div class="award-icon"></div>
                       <div class="award-content">
                           <span class="date text-primary">2023 - 2025</span>
-                          <h5 class="title">Магистратура</h5>
-                          <p class="description">
+                          <h5 class="title">
+                              <span class="ru">Магистратура</span><span class="en">Master's Degree</span>
+                          </h5>
+                          <p class="description ru">
                               РГУ нефти и газа им. И.М. Губкина. Инженерный факультет.<br>
                               <strong>Диплом с отличием.</strong><br>
                               Автор научных публикаций в рецензируемых журналах, индексируемых в Scopus (Q2) и Web of Science.
+                          </p>
+                          <p class="description en">
+                              Gubkin Russian State University of Oil and Gas. Faculty of Engineering.<br>
+                              <strong>Diploma with honors.</strong><br>
+                              Author of scientific publications in peer-reviewed journals indexed in Scopus (Q2) and Web of Science.
                           </p>
                       </div>
                   </div>
@@ -340,15 +467,20 @@
           <div class="row my-auto" id="contact"> 
             <div class="col-12 contact-centered mt-5"> 
               <div class="contact-cont2 text-center"> 
-                <h2 class="mb-4">Связаться со мной</h2>
+                <h2 class="mb-4">
+                    <span class="ru">Связаться со мной</span><span class="en">Get in Touch</span>
+                </h2>
                 <div class="heading-border mx-auto mb-5"></div>
                 
                 <div class="contact-add contact-box-desc mb-4">
-                  <h3><i class="fa fa-map-marker text-primary fa-2x mb-2"></i><br> Локация</h3>
-                  <p>Москва, Россия</p>
+                  <h3 class="ru"><i class="fa fa-map-marker text-primary fa-2x mb-2"></i><br> Локация</h3>
+                  <h3 class="en"><i class="fa fa-map-marker text-primary fa-2x mb-2"></i><br> Location</h3>
+                  <p class="ru">Москва, Россия</p>
+                  <p class="en">Moscow, Russia</p>
                 </div>
                 <div class="contact-phone contact-side-desc contact-box-desc mb-4">
-                  <h3><i class="fa fa-phone text-primary fa-2x mb-2"></i><br> Телефон</h3>
+                  <h3 class="ru"><i class="fa fa-phone text-primary fa-2x mb-2"></i><br> Телефон</h3>
+                  <h3 class="en"><i class="fa fa-phone text-primary fa-2x mb-2"></i><br> Phone</h3>
                   <p>+7 (991) 582-08-11</p>
                 </div>
                 <div class="contact-mail contact-side-desc contact-box-desc">
@@ -378,7 +510,9 @@
                           <div class="modal-body">
                               <div class="title-bar">
                                 <div class="col-md-12">
-                                  <h2 class="text-center">Схема базы данных</h2>
+                                  <h2 class="text-center">
+                                      <span class="ru">Схема базы данных</span><span class="en">Database Schema</span>
+                                  </h2>
                                   <div class="heading-border"></div>
                                 </div>
                               </div>
@@ -387,9 +521,10 @@
                                   <img class="img-fluid img-centered" src="img/portfolio/p-1.jpg" alt="">
                                 </div>
                                 <div class="col-md-6">
-                                  <p>Здесь можно добавить подробное описание архитектуры DWH, логической модели или процесса интеграции, который ты проектировала.</p>
+                                  <p class="ru">Здесь можно добавить подробное описание архитектуры DWH, логической модели или процесса интеграции, который ты проектировала.</p>
+                                  <p class="en">Here you can add a detailed description of the DWH architecture, logical model, or integration process you designed.</p>
                                   <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
-                                      <i class="fa fa-times"></i> Закрыть
+                                      <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
                                   </button>
                               </div>
                             </div>
@@ -413,7 +548,7 @@
                             <div class="modal-body">
                                 <div class="title-bar">
                                   <div class="col-md-12">
-                                    <h2 class="text-center">UML / BPMN Диаграмма</h2>
+                                    <h2 class="text-center">UML / BPMN <span class="ru">Диаграмма</span><span class="en">Diagram</span></h2>
                                     <div class="heading-border"></div>
                                   </div>
                                 </div>
@@ -422,9 +557,10 @@
                                     <img class="img-fluid img-centered" src="img/portfolio/p-2.jpg" alt="">
                                   </div>
                                   <div class="col-md-6">
-                                    <p>Описание бизнес-процесса или интеграции (REST/SOAP/Kafka).</p>
+                                    <p class="ru">Описание бизнес-процесса или интеграции (REST/SOAP/Kafka).</p>
+                                    <p class="en">Description of the business process or integration (REST/SOAP/Kafka).</p>
                                     <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
-                                        <i class="fa fa-times"></i> Закрыть
+                                        <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
                                     </button>
                                 </div>
                               </div>
@@ -443,20 +579,36 @@
     <script src="js/custom.js"></script>
     <script>
         $(document).ready(function(){
+            // Логика фильтров портфолио
+            $(".filter-b").click(function(){
+                var value = $(this).attr('data-filter');
+                if(value == "all") { 
+                    $('.filter').show('1000');
+                } else { 
+                    $(".filter").not('.'+value).hide('3000');
+                    $('.filter').filter('.'+value).show('3000');
+                }
+            });
 
-        $(".filter-b").click(function(){
-            var value = $(this).attr('data-filter');
-            if(value == "all")
-            { 
-                $('.filter').show('1000');
-            }
-            else
-            { 
-                $(".filter").not('.'+value).hide('3000');
-                $('.filter').filter('.'+value).show('3000');
+            // Автоматическое определение языка из URL-параметра при загрузке страницы
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            if (langParam === 'en' || langParam === 'ru') {
+                switchLang(langParam);
+            } else {
+                switchLang('ru'); // язык по умолчанию
             }
         });
-        });
+
+        // Функция переключения языков без перезагрузки страницы
+        function switchLang(lang) {
+            document.body.className = lang; 
+            
+            document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
+            document.title = lang === 'ru' ? 'Таноя Банерджи — Портфолио' : 'Tanoya Banerjee — Portfolio';
+        }
     </script> 
 </body>
 
