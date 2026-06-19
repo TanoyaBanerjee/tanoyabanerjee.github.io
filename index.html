@@ -93,10 +93,12 @@
         /* ==========================================
            4. ЖЕСТКОЕ ПЕРЕОПРЕДЕЛЕНИЕ СИНЕГО ЦВЕТА
            ========================================== */
+        /* Раздел "Проекты" - цвет полупрозрачной заливки при наведении */
         .portfolio-item .portfolio-link .caption-port {
             background-color: rgba(107, 40, 40, 0.9) !important;
         }
         
+        /* Раздел "Образование" - убираем синий из заголовков и иконок */
         .award .title, .award h5.title, .award h5 {
             color: #6b2828 !important;
         }
@@ -110,12 +112,14 @@
             border-color: #6b2828 !important;
         }
         
+        /* Фикс для ромбиков на самой линии таймлайна */
         .main-award .award::before, .main-award .award::after,
         .award-icon::before, .award-icon::after {
             background-color: #6b2828 !important;
             border-color: #6b2828 !important;
         }
         
+        /* ФИКС: Маленький ромбик-соединитель от карточки к линии таймлайна */
         .main-award .award-content::before,
         .main-award .award-content::after {
             background-color: #6b2828 !important;
@@ -181,30 +185,9 @@
            ========================================== */
         .portfolio-item img {
             width: 100%;
-            aspect-ratio: 4 / 3; 
-            object-fit: cover; 
-            object-position: top; 
-        }
-
-        /* ==========================================
-           8. НАСТРОЙКА ЦВЕТОВ В СЕКЦИИ НАВЫКОВ
-           ========================================== */
-        .skill-cover.bg-primary {
-            background-color: #6b2828 !important; /* Заливка раздела - бордовый */
-        }
-        .skill-item-box {
-            background-color: #343a40 !important; /* Квадраты - темно-серые */
-            padding: 30px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            height: 100%;
-        }
-        .skill-item-box i {
-            color: #6b2828 !important; /* Иконки - бордовые */
-            margin-bottom: 15px;
-        }
-        .skill-item-box h4, .skill-item-box p {
-            color: #ffffff !important; /* Текст (заголовки и подписи) - белый */
+            aspect-ratio: 4 / 3; /* Задает пропорции плитки */
+            object-fit: cover; /* Заполняет рамку без искажений */
+            object-position: top; /* Прижимает к верху, обрезая низ */
         }
     </style>
 </head>
@@ -245,13 +228,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#skills">
-                        <span class="ru">Навыки</span><span class="en">Skills</span>
+                    <a class="nav-link js-scroll-trigger" href="#portfolio">
+                        <span class="ru">Проекты</span><span class="en">Projects</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">
-                        <span class="ru">Сертификаты</span><span class="en">Certificates</span>
+                    <a class="nav-link js-scroll-trigger" href="#skills">
+                        <span class="ru">Навыки</span><span class="en">Skills</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -400,111 +383,109 @@
           </div>
       </section>
 
-    <section class=" d-flex flex-column" id="skills">
-         <div class="p-lg-5 p-3 skill-cover bg-primary">
-          <h3 class="text-center text-white mb-5">
-              <span class="ru">Ключевой стек технологий</span>
-              <span class="en">Key Tech Stack</span>
-          </h3>
-          <div class="row text-center my-auto"> 
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item-box">
-                      <i class="fa fa-database fa-5x"></i>
-                      <h4 class="mt-3">
-                          <span class="ru">Базы данных</span><span class="en">Databases</span>
-                      </h4>
-                      <p>PostgreSQL, ClickHouse, SQL</p>
-                  </div>
-              </div>
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item-box">
-                      <i class="fa fa-exchange fa-5x"></i>
-                      <h4 class="mt-3">
-                          <span class="ru">Интеграции</span><span class="en">Integrations</span>
-                      </h4>
-                      <p>REST, SOAP, Kafka, RabbitMQ</p>
-                  </div>
-              </div>
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item-box">
-                      <i class="fa fa-sitemap fa-5x"></i>
-                      <h4 class="mt-3">
-                          <span class="ru">Анализ</span><span class="en">Analysis</span>
-                      </h4>
-                      <p>UML, BPMN 2.0, PlantUML</p>
-                  </div>
-              </div>
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item-box">
-                      <i class="fa fa-server fa-5x"></i>
-                      <h4 class="mt-3">DWH & Infra</h4>
-                      <p>ETL, Docker, Apache Airflow</p>
-                  </div>
-              </div>
-          </div>
-         </div> 
-      </section>
-
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="portfolio"> 
           <div class="row my-auto">
               <div class="col-12">
                 <h2 class="text-center">
-                    <span class="ru">Сертификаты</span>
-                    <span class="en">Certificates</span>
+                    <span class="ru">Архитектура и Проекты</span>
+                    <span class="en">Architecture & Projects</span>
                 </h2>
                 <div class="mb-5 heading-border"></div>
               </div>
               <div class="col-md-12">
-                <p class="text-center ru">Здесь представлены сертификаты, подтверждающие мою квалификацию и навыки</p>
-                <p class="text-center en">Here are the certificates confirming my qualifications and skills</p>
+                <p class="text-center ru">Здесь ты можешь добавить скриншоты диаграмм UML, BPMN, ER-моделей или архитектурных схем (Kafka, DWH)</p>
+                <p class="text-center en">Here you can find screenshots of UML, BPMN, ER diagrams, or architectural schemas (Kafka, DWH)</p>
                 <div class="port-head-cont">
                   <button class="btn btn-general btn-green filter-b active" data-filter="all">
-                      <span class="ru">Все сертификаты</span><span class="en">All certificates</span>
+                      <span class="ru">Все схемы</span><span class="en">All schemas</span>
                   </button>
-                  <button class="btn btn-general btn-green filter-b" data-filter="analytics">
-                      <span class="ru">Аналитика</span><span class="en">Analytics</span>
-                  </button>
-                  <button class="btn btn-general btn-green filter-b" data-filter="architecture">
-                      <span class="ru">Архитектура</span><span class="en">Architecture</span>
+                  <button class="btn btn-general btn-green filter-b" data-filter="dwh">DWH / DB</button>
+                  <button class="btn btn-general btn-green filter-b" data-filter="integrations">
+                      <span class="ru">Интеграции</span><span class="en">Integrations</span>
                   </button>
                 </div>
               </div>
           </div>
           
           <div class="row my-auto mt-4">
-              <div class="col-sm-4 portfolio-item filter analytics">
+              <div class="col-sm-4 portfolio-item filter dwh">
                   <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
                       <div class="caption-port">
                           <div class="caption-port-content">
                               <i class="fa fa-search-plus fa-3x"></i>
                           </div>
                       </div>
-                      <img class="img-fluid" src="img/portfolio/p-1.jpg" alt="Сертификат 1">
+                      <img class="img-fluid" src="img/portfolio/p-1.jpg" alt="Схема БД">
                   </a>
               </div>
               
-              <div class="col-sm-4 portfolio-item filter architecture">
+              <div class="col-sm-4 portfolio-item filter integrations">
                   <a class="portfolio-link" href="#portfolioModal2" data-toggle="modal">
                       <div class="caption-port">
                           <div class="caption-port-content">
                               <i class="fa fa-search-plus fa-3x"></i>
                           </div>
                       </div>
-                      <img class="img-fluid" src="img/portfolio/p-2.jpg" alt="Сертификат 2">
+                      <img class="img-fluid" src="img/portfolio/p-2.jpg" alt="Схема интеграции">
                   </a>
               </div>
               
-              <div class="col-sm-4 portfolio-item filter analytics architecture">
+              <div class="col-sm-4 portfolio-item filter integrations dwh">
                   <a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
                       <div class="caption-port">
                           <div class="caption-port-content">
                               <i class="fa fa-search-plus fa-3x"></i>
                           </div>
                       </div>
-                      <img class="img-fluid" src="img/portfolio/p-3.jpg" alt="Сертификат 3">
+                      <img class="img-fluid" src="img/portfolio/p-3.jpg" alt="Дополнительная схема">
                   </a>
               </div>
           </div>
+      </section>
+
+    <section class=" d-flex flex-column" id="skills">
+         <div class="p-lg-5 p-3 skill-cover bg-primary">
+          <h3 class="text-center text-white">
+              <span class="ru">Ключевой стек технологий</span>
+              <span class="en">Key Tech Stack</span>
+          </h3>
+          <div class="row text-center my-auto mt-5"> 
+              <div class="col-md-3 col-sm-6 mb-4">
+                  <div class="skill-item">
+                      <i class="fa fa-database fa-5x"></i>
+                      <h4 class="mt-3 text-white">
+                          <span class="ru">Базы данных</span><span class="en">Databases</span>
+                      </h4>
+                      <p class="text-white">PostgreSQL, ClickHouse, SQL</p>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-4">
+                  <div class="skill-item">
+                      <i class="fa fa-exchange fa-5x"></i>
+                      <h4 class="mt-3 text-white">
+                          <span class="ru">Интеграции</span><span class="en">Integrations</span>
+                      </h4>
+                      <p class="text-white">REST, SOAP, Kafka, RabbitMQ</p>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-4">
+                  <div class="skill-item">
+                      <i class="fa fa-sitemap fa-5x"></i>
+                      <h4 class="mt-3 text-white">
+                          <span class="ru">Анализ</span><span class="en">Analysis</span>
+                      </h4>
+                      <p class="text-white">UML, BPMN 2.0, PlantUML</p>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-6 mb-4">
+                  <div class="skill-item">
+                      <i class="fa fa-server fa-5x"></i>
+                      <h4 class="mt-3 text-white">DWH & Infra</h4>
+                      <p class="text-white">ETL, Docker, Apache Airflow</p>
+                  </div>
+              </div>
+          </div>
+         </div> 
       </section>
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
@@ -615,7 +596,7 @@
                               <div class="title-bar">
                                 <div class="col-md-12">
                                   <h2 class="text-center">
-                                      <span class="ru">Сертификат</span><span class="en">Certificate</span>
+                                      <span class="ru">Схема базы данных</span><span class="en">Database Schema</span>
                                   </h2>
                                   <div class="heading-border"></div>
                                 </div>
@@ -625,8 +606,8 @@
                                   <img class="img-fluid img-centered" src="img/portfolio/p-1.jpg" alt="">
                                 </div>
                                 <div class="col-md-6">
-                                  <p class="ru">Здесь можно добавить подробное описание курса, полученных навыков или технологий, которые были изучены в рамках данной сертификации</p>
-                                  <p class="en">Here you can add a detailed description of the course, acquired skills, or technologies learned within this certification</p>
+                                  <p class="ru">Здесь можно добавить подробное описание архитектуры DWH, логической модели или процесса интеграции, который ты проектировала</p>
+                                  <p class="en">Here you can add a detailed description of the DWH architecture, logical model, or integration process you designed</p>
                                   <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
                                       <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
                                   </button>
@@ -652,9 +633,7 @@
                             <div class="modal-body">
                                 <div class="title-bar">
                                   <div class="col-md-12">
-                                    <h2 class="text-center">
-                                      <span class="ru">Сертификат</span><span class="en">Certificate</span>
-                                    </h2>
+                                    <h2 class="text-center">UML / BPMN <span class="ru">Диаграмма</span><span class="en">Diagram</span></h2>
                                     <div class="heading-border"></div>
                                   </div>
                                 </div>
@@ -663,8 +642,8 @@
                                     <img class="img-fluid img-centered" src="img/portfolio/p-2.jpg" alt="">
                                   </div>
                                   <div class="col-md-6">
-                                    <p class="ru">Подтверждение профессиональной квалификации в области системного анализа или инженерии данных</p>
-                                    <p class="en">Confirmation of professional qualification in the field of system analysis or data engineering</p>
+                                    <p class="ru">Описание бизнес-процесса или интеграции (REST/SOAP/Kafka)</p>
+                                    <p class="en">Description of the business process or integration (REST/SOAP/Kafka)</p>
                                     <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
                                         <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
                                     </button>
@@ -691,7 +670,7 @@
                                 <div class="title-bar">
                                   <div class="col-md-12">
                                     <h2 class="text-center">
-                                        <span class="ru">Сертификат</span><span class="en">Certificate</span>
+                                        <span class="ru">Дополнительная схема</span><span class="en">Additional Schema</span>
                                     </h2>
                                     <div class="heading-border"></div>
                                   </div>
@@ -701,8 +680,8 @@
                                     <img class="img-fluid img-centered" src="img/portfolio/p-3.jpg" alt="">
                                   </div>
                                   <div class="col-md-6">
-                                    <p class="ru">Дополнительный сертификат, подтверждающий знание инструментов, методологий или профильных технологий</p>
-                                    <p class="en">Additional certificate confirming knowledge of tools, methodologies, or specialized technologies</p>
+                                    <p class="ru">Описание третьей схемы, архитектурного решения или процесса интеграции</p>
+                                    <p class="en">Description of the third schema, architectural solution, or integration process</p>
                                     <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
                                         <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
                                     </button>
