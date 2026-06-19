@@ -53,7 +53,7 @@
             flex-direction: column !important;
             justify-content: space-between !important;
             width: 100% !important;
-            height: calc(100% - 3rem); /* Учитываем нижний отступ mb-5 */
+            height: calc(100% - 3rem);
             margin-bottom: 3rem !important;
         }
         .resume-content {
@@ -66,13 +66,11 @@
         .text-primary { color: #e24343 !important; }
         .bg-primary { background-color: #e24343 !important; }
         
-        /* Исправленный цвет разделительных полос под заголовками */
         .heading-border, .heading-border-light { 
             background-color: #e24343 !important; 
             border-bottom: 2px solid #e24343 !important; 
         }
         
-        /* Переопределение цвета кнопок в разделе Проекты (надписи и рамки) */
         .btn-general.btn-green {
             color: #e24343 !important;
             border-color: #e24343 !important;
@@ -83,9 +81,6 @@
             color: #ffffff !important;
         }
 
-        /* ==========================================
-           4. ЦВЕТ ТЕКСТА "ОБО МНЕ" 
-           ========================================== */
         .about-text { 
             color: #343a40 !important; 
             font-weight: 500;
@@ -97,7 +92,7 @@
         }
 
         /* ==========================================
-           5. КНОПКА ПЕРЕКЛЮЧЕНИЯ ЯЗЫКА
+           4. КНОПКА ПЕРЕКЛЮЧЕНИЯ ЯЗЫКА
            ========================================== */
         .lang-switch {
             position: fixed;
@@ -130,26 +125,55 @@
                 font-size: 12px;
             }
         }
-        /* Скрываем контент для разных языков */
-        .lang-ru, .lang-en {
-            display: block;
-        }
+
+        /* ==========================================
+           5. ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА - ИСПРАВЛЕНО
+           ========================================== */
+        /* По умолчанию показываем русский, скрываем английский */
         .lang-en {
-            display: none;
+            display: none !important;
         }
+        .lang-ru {
+            display: inline !important;
+        }
+
+        /* Когда включен английский - показываем английский, скрываем русский */
         body.lang-en .lang-ru {
-            display: none;
+            display: none !important;
         }
         body.lang-en .lang-en {
-            display: block;
+            display: inline !important;
         }
-        body.lang-ru .lang-ru {
-            display: block;
+
+        /* Для блочных элементов */
+        .lang-ru-block {
+            display: block !important;
         }
-        body.lang-ru .lang-en {
-            display: none;
+        .lang-en-block {
+            display: none !important;
         }
-        /* Адаптация для навигации и мелких элементов */
+        body.lang-en .lang-ru-block {
+            display: none !important;
+        }
+        body.lang-en .lang-en-block {
+            display: block !important;
+        }
+
+        /* Для элементов, которые могут быть и инлайн, и блок */
+        .lang-ru-inline {
+            display: inline !important;
+        }
+        .lang-en-inline {
+            display: none !important;
+        }
+        body.lang-en .lang-ru-inline {
+            display: none !important;
+        }
+        body.lang-en .lang-en-inline {
+            display: inline !important;
+        }
+
+        /* Адаптация для навигации */
         .lang-en .navbar-brand h3 {
             font-size: 1.3rem;
         }
@@ -166,7 +190,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none mx-0 px-0"><h3 class="text-white lang-ru">Таноя Банерджи</h3><h3 class="text-white lang-en">Tanoya Banerjee</h3></span>
+        <span class="d-block d-lg-none mx-0 px-0">
+            <h3 class="text-white lang-ru">Таноя Банерджи</h3>
+            <h3 class="text-white lang-en">Tanoya Banerjee</h3>
+        </span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="Таноя Банерджи">
         </span>
@@ -192,8 +219,12 @@
     <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
           <div class="my-auto" >
               <h1 class="mb-0">
-                  <span class="lang-ru">Таноя</span><span class="lang-en">Tanoya</span>
-                  <span class="text-primary"><span class="lang-ru">Банерджи</span><span class="lang-en">Banerjee</span></span>
+                  <span class="lang-ru">Таноя</span>
+                  <span class="lang-en">Tanoya</span>
+                  <span class="text-primary">
+                      <span class="lang-ru">Банерджи</span>
+                      <span class="lang-en">Banerjee</span>
+                  </span>
               </h1>
               <div class="subheading mb-5">
                   <span class="lang-ru">Ведущий системный аналитик (DWH & AI) · Москва</span>
@@ -525,7 +556,7 @@
             }
         });
 
-        // ======== ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА ========
+        // ======== ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА (ИСПРАВЛЕНО) ========
         $('#langToggle').click(function() {
             var body = $('body');
             if (body.hasClass('lang-ru')) {
