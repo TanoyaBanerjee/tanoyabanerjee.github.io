@@ -98,7 +98,7 @@
             background-color: rgba(107, 40, 40, 0.9) !important;
         }
         
-        /* Раздел "Образование" - убираем синий из заголовков и ромбиков */
+        /* Раздел "Образование" - убираем синий из заголовков и иконок */
         .award .title, .award h5.title, .award h5 {
             color: #6b2828 !important;
         }
@@ -111,11 +111,26 @@
             background-color: #6b2828 !important;
             border-color: #6b2828 !important;
         }
-        /* Фикс для маленького ромбика на линии таймлайна */
+        
+        /* Фикс для ромбиков на самой линии таймлайна */
         .main-award .award::before, .main-award .award::after,
         .award-icon::before, .award-icon::after {
             background-color: #6b2828 !important;
             border-color: #6b2828 !important;
+        }
+        
+        /* ФИКС: Маленький ромбик-соединитель от карточки к линии таймлайна */
+        .main-award .award-content::before,
+        .main-award .award-content::after {
+            background-color: #6b2828 !important;
+        }
+        .main-award .award:nth-child(odd) .award-content::before,
+        .main-award .award:nth-child(odd) .award-content::after {
+            border-left-color: #6b2828 !important;
+        }
+        .main-award .award:nth-child(even) .award-content::before,
+        .main-award .award:nth-child(even) .award-content::after {
+            border-right-color: #6b2828 !important;
         }
 
         /* ==========================================
