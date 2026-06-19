@@ -7,7 +7,7 @@
     <meta name="description" content="Tanoya Banerjee Portfolio - Senior System Analyst">
     <meta name="author" content="Tanoya Banerjee">
 
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
     <title>Таноя Банерджи — Портфолио</title>
 
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -91,17 +91,31 @@
         }
 
         /* ==========================================
-           4. ЦВЕТА ПРИ НАВЕДЕНИИ (Hover)
+           4. ЖЕСТКОЕ ПЕРЕОПРЕДЕЛЕНИЕ СИНЕГО ЦВЕТА
            ========================================== */
         /* Раздел "Проекты" - цвет полупрозрачной заливки при наведении */
         .portfolio-item .portfolio-link .caption-port {
-            background-color: rgba(107, 40, 40, 0.8) !important;
+            background-color: rgba(107, 40, 40, 0.9) !important;
         }
-        /* Раздел "Образование" - цвет иконки при наведении */
-        .award:hover .award-icon {
+        
+        /* Раздел "Образование" - убираем синий из заголовков и ромбиков */
+        .award .title, .award h5.title, .award h5 {
+            color: #6b2828 !important;
+        }
+        .main-award .award-icon {
+            background-color: #fff !important;
+            border-color: #6b2828 !important;
+            border: 3px solid #6b2828 !important;
+        }
+        .main-award .award:hover .award-icon {
             background-color: #6b2828 !important;
             border-color: #6b2828 !important;
-            color: #fff !important;
+        }
+        /* Фикс для маленького ромбика на линии таймлайна */
+        .main-award .award::before, .main-award .award::after,
+        .award-icon::before, .award-icon::after {
+            background-color: #6b2828 !important;
+            border-color: #6b2828 !important;
         }
 
         /* ==========================================
@@ -226,17 +240,17 @@
                   <a href="mailto:tanoyabaner@mail.ru" class="text-primary">tanoyabaner@mail.ru</a>
               </div>
               <p class="mb-4 about-text ru" style="max-width: 700px;">
-                  Более 4 лет опыта работы в качестве Senior System и Business Analyst в высоконагруженных DWH, корпоративных интеграциях и AI-платформах. Имею сильный бэкграунд в PM & BA: декомпозирую комплексные требования, оцениваю риски и управляю ожиданиями стейкхолдеров.
+                  Более 4 лет опыта работы в качестве Senior System и Business Analyst в высоконагруженных DWH, корпоративных интеграциях и AI-платформах. Имею сильный бэкграунд в PM & BA: декомпозирую комплексные требования, оцениваю риски и управляю ожиданиями стейкхолдеров
               </p>
               <p class="mb-4 about-text en" style="max-width: 700px;">
-                  Over 4 years of experience as a Senior System and Business Analyst in high-load DWH, corporate integrations, and AI platforms. Strong background in PM & BA: decomposing complex requirements, assessing risks, and managing stakeholder expectations.
+                  Over 4 years of experience as a Senior System and Business Analyst in high-load DWH, corporate integrations, and AI platforms. Strong background in PM & BA: decomposing complex requirements, assessing risks, and managing stakeholder expectations
               </p>
 
               <p class="mb-5 about-text ru" style="max-width: 700px;">
-                  Отлично справляюсь с одновременным ведением нескольких проектов. Умею находить общий язык со всеми участниками процесса и успешно улаживаю конфликты (Бизнес vs ИБ vs Архитектура).
+                  Отлично справляюсь с одновременным ведением нескольких проектов. Умею находить общий язык со всеми участниками процесса и успешно улаживаю конфликты (Бизнес vs ИБ vs Архитектура)
               </p>
               <p class="mb-5 about-text en" style="max-width: 700px;">
-                  I excel at managing multiple projects simultaneously. I easily find common ground with all process participants and successfully resolve conflicts (Business vs. InfoSec vs. Architecture).
+                  I excel at managing multiple projects simultaneously. I easily find common ground with all process participants and successfully resolve conflicts (Business vs. InfoSec vs. Architecture)
               </p>
               
               <ul class="list-inline list-social-icons mb-0">
@@ -277,8 +291,8 @@
                           <span class="ru">АО "НСИС" (ДО ЦБ РФ)</span>
                           <span class="en">JSC "NSIS" (Subsidiary of CBR)</span>
                       </h5>
-                      <p class="ru">Разрешила противоречия стейкхолдеров (Бизнес vs ИБ) для запуска генеративного AI-ассистента на LLM (Qwen/Claude). Ускорила работу витрин данных в 3 раза за счет миграции с PostgreSQL на ClickHouse. Спроектировала RAG-пайплайны с векторным поиском.</p>
-                      <p class="en">Resolved stakeholder conflicts (Business vs. InfoSec) to launch a generative AI assistant based on LLMs (Qwen/Claude). Accelerated data mart performance by 3x by migrating from PostgreSQL to ClickHouse. Designed RAG pipelines with vector search.</p>
+                      <p class="ru">Разрешила противоречия стейкхолдеров (Бизнес vs ИБ) для запуска генеративного AI-ассистента на LLM (Qwen/Claude). Ускорила работу витрин данных в 3 раза за счет миграции с PostgreSQL на ClickHouse. Спроектировала RAG-пайплайны с векторным поиском</p>
+                      <p class="en">Resolved stakeholder conflicts (Business vs. InfoSec) to launch a generative AI assistant based on LLMs (Qwen/Claude). Accelerated data mart performance by 3x by migrating from PostgreSQL to ClickHouse. Designed RAG pipelines with vector search</p>
                   </div>
                   <div class="resume-date text-md-right">
                       <span class="text-primary ru">Апр 2026 - н.вр.</span>
@@ -295,8 +309,8 @@
                           <span class="ru">АО "Топ Системы" (лидер в PLM в РФ)</span>
                           <span class="en">JSC "Top Systems" (PLM leader in RF)</span>
                       </h5>
-                      <p class="ru">Устранила интеграционные узкие места при миграции данных Роскосмоса: окно миграции меньше на 60%, нагрузка на CPU на 50%. Разработала интеграцию с 1C ERP через REST API, ускорив выпуск техдокументации в 2 раза.</p>
-                      <p class="en">Eliminated integration bottlenecks during the Roscosmos data migration: reduced migration window by 60% and CPU load by 50%. Developed integration with 1C ERP via REST API, accelerating technical documentation release by 2x.</p>
+                      <p class="ru">Устранила интеграционные узкие места при миграции данных Роскосмоса: окно миграции меньше на 60%, нагрузка на CPU на 50%. Разработала интеграцию с 1C ERP через REST API, ускорив выпуск техдокументации в 2 раза</p>
+                      <p class="en">Eliminated integration bottlenecks during the Roscosmos data migration: reduced migration window by 60% and CPU load by 50%. Developed integration with 1C ERP via REST API, accelerating technical documentation release by 2x</p>
                   </div>
                   <div class="resume-date text-md-right">
                       <span class="text-primary ru">Дек 2024 - Апр 2026</span>
@@ -313,8 +327,8 @@
                           <span class="ru">ООО "Группа Полипластик" (лидер в ПНДТ в РФ)</span>
                           <span class="en">LLC "Polyplastic Group"</span>
                       </h5>
-                      <p class="ru">Сократила TTM на 50% и устранила баги на проде, автоматизировав интеграционные тесты через Postman в CI/CD. Спроектировала физическую и логическую модель данных PostgreSQL (3НФ), исключив аномалии обновлений.</p>
-                      <p class="en">Reduced TTM by 50% and eliminated production bugs by automating integration tests via Postman in CI/CD. Designed physical and logical data models in PostgreSQL (3NF), eliminating update anomalies.</p>
+                      <p class="ru">Сократила TTM на 50% и устранила баги на проде, автоматизировав интеграционные тесты через Postman в CI/CD. Спроектировала физическую и логическую модель данных PostgreSQL (3НФ), исключив аномалии обновлений</p>
+                      <p class="en">Reduced TTM by 50% and eliminated production bugs by automating integration tests via Postman in CI/CD. Designed physical and logical data models in PostgreSQL (3NF), eliminating update anomalies</p>
                   </div>
                   <div class="resume-date text-md-right">
                       <span class="text-primary ru">Июн 2023 - Дек 2024</span>
@@ -331,8 +345,8 @@
                           <span class="ru">АО НИИСТ</span>
                           <span class="en">JSC "NIIST"</span>
                       </h5>
-                      <p class="ru">Внедрила модуль планирования ERP в срок, сократив рутинные трудозатраты смежных отделов. Снизила процент доработок на UAT, внедрив матрицу трассируемости требований. Разрабатывала ТЗ и маппинг данных.</p>
-                      <p class="en">Implemented the ERP planning module on time, reducing routine labor costs for adjacent departments. Decreased the UAT rework rate by introducing a requirements traceability matrix. Developed technical specs and data mapping.</p>
+                      <p class="ru">Внедрила модуль планирования ERP в срок, сократив рутинные трудозатраты смежных отделов. Снизила процент доработок на UAT, внедрив матрицу трассируемости требований. Разрабатывала ТЗ и маппинг данных</p>
+                      <p class="en">Implemented the ERP planning module on time, reducing routine labor costs for adjacent departments. Decreased the UAT rework rate by introducing a requirements traceability matrix. Developed technical specs and data mapping</p>
                   </div>
                   <div class="resume-date text-md-right">
                       <span class="text-primary ru">Фев 2022 - Апр 2023</span>
@@ -354,8 +368,8 @@
                 <div class="mb-5 heading-border"></div>
               </div>
               <div class="col-md-12">
-                <p class="text-center ru">Здесь ты можешь добавить скриншоты диаграмм UML, BPMN, ER-моделей или архитектурных схем (Kafka, DWH).</p>
-                <p class="text-center en">Here you can find screenshots of UML, BPMN, ER diagrams, or architectural schemas (Kafka, DWH).</p>
+                <p class="text-center ru">Здесь ты можешь добавить скриншоты диаграмм UML, BPMN, ER-моделей или архитектурных схем (Kafka, DWH)</p>
+                <p class="text-center en">Here you can find screenshots of UML, BPMN, ER diagrams, or architectural schemas (Kafka, DWH)</p>
                 <div class="port-head-cont">
                   <button class="btn btn-general btn-green filter-b active" data-filter="all">
                       <span class="ru">Все схемы</span><span class="en">All schemas</span>
@@ -454,12 +468,12 @@
                               <span class="ru">Бакалавриат</span><span class="en">Bachelor's Degree</span>
                           </h5>
                           <p class="description ru">
-                              РГУ нефти и газа им. И.М. Губкина. Инженерный факультет.<br>
-                              <strong>Диплом с отличием.</strong>
+                              РГУ нефти и газа им. И.М. Губкина. Инженерный факультет<br>
+                              <strong>Диплом с отличием</strong>
                           </p>
                           <p class="description en">
-                              Gubkin Russian State University of Oil and Gas. Faculty of Engineering.<br>
-                              <strong>Diploma with honors.</strong>
+                              Gubkin Russian State University of Oil and Gas. Faculty of Engineering<br>
+                              <strong>Diploma with honors</strong>
                           </p>
                       </div>
                   </div>
@@ -471,14 +485,14 @@
                               <span class="ru">Магистратура</span><span class="en">Master's Degree</span>
                           </h5>
                           <p class="description ru">
-                              РГУ нефти и газа им. И.М. Губкина. Инженерный факультет.<br>
-                              <strong>Диплом с отличием.</strong><br>
-                              Автор научных публикаций в рецензируемых журналах, индексируемых в Scopus (Q2) и Web of Science.
+                              РГУ нефти и газа им. И.М. Губкина. Инженерный факультет<br>
+                              <strong>Диплом с отличием</strong><br>
+                              Автор научных публикаций в рецензируемых журналах, индексируемых в Scopus (Q2) и Web of Science
                           </p>
                           <p class="description en">
-                              Gubkin Russian State University of Oil and Gas. Faculty of Engineering.<br>
-                              <strong>Diploma with honors.</strong><br>
-                              Author of scientific publications in peer-reviewed journals indexed in Scopus (Q2) and Web of Science.
+                              Gubkin Russian State University of Oil and Gas. Faculty of Engineering<br>
+                              <strong>Diploma with honors</strong><br>
+                              Author of scientific publications in peer-reviewed journals indexed in Scopus (Q2) and Web of Science
                           </p>
                       </div>
                   </div>
@@ -555,8 +569,8 @@
                                   <img class="img-fluid img-centered" src="img/portfolio/p-1.jpg" alt="">
                                 </div>
                                 <div class="col-md-6">
-                                  <p class="ru">Здесь можно добавить подробное описание архитектуры DWH, логической модели или процесса интеграции, который ты проектировала.</p>
-                                  <p class="en">Here you can add a detailed description of the DWH architecture, logical model, or integration process you designed.</p>
+                                  <p class="ru">Здесь можно добавить подробное описание архитектуры DWH, логической модели или процесса интеграции, который ты проектировала</p>
+                                  <p class="en">Here you can add a detailed description of the DWH architecture, logical model, or integration process you designed</p>
                                   <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
                                       <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
                                   </button>
@@ -591,8 +605,8 @@
                                     <img class="img-fluid img-centered" src="img/portfolio/p-2.jpg" alt="">
                                   </div>
                                   <div class="col-md-6">
-                                    <p class="ru">Описание бизнес-процесса или интеграции (REST/SOAP/Kafka).</p>
-                                    <p class="en">Description of the business process or integration (REST/SOAP/Kafka).</p>
+                                    <p class="ru">Описание бизнес-процесса или интеграции (REST/SOAP/Kafka)</p>
+                                    <p class="en">Description of the business process or integration (REST/SOAP/Kafka)</p>
                                     <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
                                         <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
                                     </button>
