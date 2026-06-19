@@ -37,7 +37,7 @@
         }
 
         /* ==========================================
-           2. ВЫРАВНИВАНИЕ КАРТОЧЕКОК ОПЫТА ПО ВЫСОТЕ
+           2. ВЫРАВНИВАНИЕ КАРТОЧЕК ОПЫТА ПО ВЫСОТЕ
            ========================================== */
         #experience .row {
             display: flex;
@@ -91,7 +91,21 @@
         }
 
         /* ==========================================
-           4. ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ
+           4. ЦВЕТА ПРИ НАВЕДЕНИИ (Hover)
+           ========================================== */
+        /* Раздел "Проекты" - цвет полупрозрачной заливки при наведении */
+        .portfolio-item .portfolio-link .caption-port {
+            background-color: rgba(107, 40, 40, 0.8) !important;
+        }
+        /* Раздел "Образование" - цвет иконки при наведении */
+        .award:hover .award-icon {
+            background-color: #6b2828 !important;
+            border-color: #6b2828 !important;
+            color: #fff !important;
+        }
+
+        /* ==========================================
+           5. ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ
            ========================================== */
         .lang-switcher {
             position: fixed;
@@ -132,7 +146,7 @@
         }
 
         /* ==========================================
-           5. ЛОГИКА ОТОБРАЖЕНИЯ ЯЗЫКОВ
+           6. ЛОГИКА ОТОБРАЖЕНИЯ ЯЗЫКОВ
            ========================================== */
         body.ru .en { display: none !important; }
         body.en .ru { display: none !important; }
@@ -224,14 +238,23 @@
               <p class="mb-5 about-text en" style="max-width: 700px;">
                   I excel at managing multiple projects simultaneously. I easily find common ground with all process participants and successfully resolve conflicts (Business vs. InfoSec vs. Architecture).
               </p>
+              
               <ul class="list-inline list-social-icons mb-0">
                   <li class="list-inline-item">
-                      <a href="https://www.linkedin.com/in/tanoya-banerjee-772018372" target="_blank" class="bg-primary">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
+                      <a href="https://www.linkedin.com/in/tanoya-banerjee-772018372" target="_blank">
+                          <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                          </span>
+                      </a>
+                  </li>
+                  <li class="list-inline-item">
+                      <a href="https://t.me/Tanoyaa" target="_blank">
+                          <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                          </span>
+                      </a>
                   </li>
               </ul>
           </div>
@@ -486,9 +509,20 @@
                 <div class="contact-mail contact-side-desc contact-box-desc">
                   <h3><i class="fa fa-envelope-o text-primary fa-2x mb-2"></i><br> Email</h3>
                   <p><a href="mailto:tanoyabaner@mail.ru" class="text-primary">tanoyabaner@mail.ru</a></p>
+                  
                   <ul class="list-inline social-icon-f top-data mt-4">
-                    <li><a href="https://www.linkedin.com/in/tanoya-banerjee-772018372" target="_blank"><i class="fa top-social fa-linkedin" style="color: #0077B5; border-color:#0077B5;"></i></a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/tanoya-banerjee-772018372" target="_blank">
+                            <i class="fa top-social fa-linkedin" style="color: #6b2828; border-color:#6b2828;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/Tanoyaa" target="_blank">
+                            <i class="fa top-social fa-telegram" style="color: #6b2828; border-color:#6b2828;"></i>
+                        </a>
+                    </li>
                   </ul>
+                  
                 </div>
               </div>
             </div> 
