@@ -19,84 +19,97 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        body, h1, h2, h3, h4, h5, h6, .content__name, .main-item__title, .title, .subheading {
-            font-family: 'Open Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
-        }
+        body, h1, h2, h3, h4, h5, h6, .content__name, .main-item__title, .title, .subheading { font-family: 'Open Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important; }
         h1.mb-0 { font-size: 4rem !important; line-height: 1.1; }
         @media (max-width: 768px) { h1.mb-0 { font-size: 2.8rem !important; } }
         #experience .row { display: flex; flex-wrap: wrap; }
         .resume-item { display: flex !important; align-items: stretch; }
         .resume-item .card { display: flex !important; flex-direction: column !important; justify-content: space-between !important; width: 100% !important; height: calc(100% - 3rem); margin-bottom: 3rem !important; }
-        .resume-content { flex-grow: 1; }
         .text-primary { color: #6b2828 !important; }
         .bg-primary { background-color: #6b2828 !important; }
-        .heading-border, .heading-border-light { background-color: #6b2828 !important; border-bottom: 2px solid #6b2828 !important; }
+        .heading-border { background-color: #6b2828 !important; border-bottom: 2px solid #6b2828 !important; }
         .btn-general.btn-green { color: #6b2828 !important; border-color: #6b2828 !important; }
-        .btn-general.btn-green.active, .btn-general.btn-green:hover { background-color: #6b2828 !important; border-color: #6b2828 !important; color: #ffffff !important; }
-        .about-text { color: #343a40 !important; font-weight: 500; }
-        .contact-centered { margin: 0 auto; max-width: 600px; }
+        .btn-general.btn-green.active, .btn-general.btn-green:hover { background-color: #6b2828 !important; color: #ffffff !important; }
         .portfolio-item .portfolio-link .caption-port { background-color: rgba(107, 40, 40, 0.9) !important; }
-        .award .title, .award h5.title, .award h5 { color: #6b2828 !important; }
-        .main-award .award-icon { background-color: #fff !important; border: 3px solid #6b2828 !important; }
-        .main-award .award:hover .award-icon { background-color: #6b2828 !important; }
-        .main-award .award::before, .main-award .award::after, .award-icon::before, .award-icon::after { background-color: #6b2828 !important; border-color: #6b2828 !important; }
-        .main-award .award-content::before, .main-award .award-content::after { background-color: #6b2828 !important; }
-        .lang-switcher { position: fixed; top: 20px; right: 30px; z-index: 9999; background: rgba(255, 255, 255, 0.9); padding: 8px 15px; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-family: 'Open Sans', sans-serif; font-weight: 600; border: 1px solid #eee; }
-        .lang-switcher a { color: #343a40; text-decoration: none; padding: 0 5px; cursor: pointer; }
-        .lang-switcher a:hover { color: #6b2828; }
-        .lang-switcher a.active { color: #6b2828; text-decoration: underline; }
+        .lang-switcher { position: fixed; top: 20px; right: 30px; z-index: 9999; background: rgba(255, 255, 255, 0.9); padding: 8px 15px; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         body.ru .en { display: none !important; }
         body.en .ru { display: none !important; }
-        .portfolio-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top; }
+        .portfolio-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
     </style>
 </head>
 
 <body id="page-top" class="ru">
     <div class="lang-switcher">
-        <a id="btn-ru" class="active" onclick="switchLang('ru')">RU</a> <span>|</span> <a id="btn-en" onclick="switchLang('en')">EN</a>
+        <a id="btn-ru" class="active" onclick="switchLang('ru')">RU</a> | <a id="btn-en" onclick="switchLang('en')">EN</a>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none mx-0 px-0">
-            <h3 class="text-white"><span class="ru">Таноя Банерджи</span><span class="en">Tanoya Banerjee</span></h3>
-        </span>
-        <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="Avatar"></span>
-      </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about"><span class="ru">Обо мне</span><span class="en">About</span></a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience"><span class="ru">Опыт работы</span><span class="en">Experience</span></a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio"><span class="ru">Сертификаты</span><span class="en">Certificates</span></a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills"><span class="ru">Навыки</span><span class="en">Skills</span></a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education"><span class="ru">Образование</span><span class="en">Education</span></a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact"><span class="ru">Контакты</span><span class="en">Contact</span></a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Обо мне</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Опыт</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Сертификаты</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Навыки</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Образование</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container-fluid p-0">
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-          <div class="my-auto">
-              <h1 class="mb-0"><span class="ru">Таноя</span><span class="en">Tanoya</span> <span class="text-primary ru">Банерджи</span><span class="text-primary en">Banerjee</span></h1>
-              <div class="subheading mb-5">
-                  <span class="ru">Ведущий системный аналитик (DWH & AI) · Москва · </span><span class="en">Senior System Analyst (DWH & AI) · Moscow · </span>
-                  <a href="mailto:tanoyabaner@mail.ru" class="text-primary">tanoyabaner@mail.ru</a>
-              </div>
-              <p class="mb-4 about-text">Более 4 лет опыта работы в качестве Senior System и Business Analyst в высоконагруженных DWH, корпоративных интеграциях и AI-платформах.</p>
-              <ul class="list-inline list-social-icons mb-0">
-                  <li class="list-inline-item"><a href="https://www.linkedin.com/in/tanoya-banerjee-772018372" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></span></a></li>
-                  <li class="list-inline-item"><a href="https://t.me/Tanoyaa" target="_blank"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-telegram fa-stack-1x fa-inverse"></i></span></a></li>
-              </ul>
-          </div>
-      </section>
+        <section class="resume-section p-5" id="about">
+            <h1>Таноя Банерджи</h1>
+            <p>Senior System Analyst (DWH & AI).</p>
+        </section>
 
-    <section class="resume-section p-3 p-lg-5" id="experience">
-          <div class="row my-auto">
-              <div class="col-12">
-                <h2 class="text-center"><span class="ru">Опыт работы</span><span class="en">Experience</span></h2>
-                <div class="mb-5 heading-border"></div>
-              </div>
+        <section class="resume-section p-5" id="experience">
+            <h2>Опыт работы</h2>
+            <div class="row">
+                <div class="col-md-6"><div class="card p-4"><h4>АО "НСИС"</h4><p>Senior System Analyst DWH & AI. Разработка GenAI и RAG-пайплайнов.</p></div></div>
+                <div class="col-md-6"><div class="card p-4"><h4>АО "Топ Системы"</h4><p>Senior System Analyst. Оптимизация интеграций и миграций данных.</p></div></div>
+                <div class="col-md-6"><div class="card p-4"><h4>ООО "Группа Полипластик"</h4><p>Middle System Analyst. Автоматизация тестов и моделирование данных.</p></div></div>
+                <div class="col-md-6"><div class="card p-4"><h4>АО НИИСТ</h4><p>Системный аналитик SAP. Внедрение модулей планирования.</p></div></div>
+            </div>
+        </section>
+
+        <section class="resume-section p-5" id="portfolio">
+            <h2>Сертификаты</h2>
+            <div class="mb-4">
+                <button class="btn btn-general btn-green filter-b active" data-filter="all">Все</button>
+                <button class="btn btn-general btn-green filter-b" data-filter="pdm">PDM</button>
+                <button class="btn btn-general btn-green filter-b" data-filter="ai">AI</button>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item filter pdm"><a href="#modal1" data-toggle="modal"><img src="img/portfolio/p-1.jpg" class="img-fluid"></a></div>
+                <div class="col-sm-4 portfolio-item filter pdm"><a href="#modal2" data-toggle="modal"><img src="img/portfolio/p-2.jpg" class="img-fluid"></a></div>
+                <div class="col-sm-4 portfolio-item filter pdm"><a href="#modal3" data-toggle="modal"><img src="img/portfolio/p-3.jpg" class="img-fluid"></a></div>
+                <div class="col-sm-4 portfolio-item filter ai"><a href="#modal4" data-toggle="modal"><img src="img/portfolio/p-4.jpg" class="img-fluid"></a></div>
+                <div class="col-sm-4 portfolio-item filter ai"><a href="#modal5" data-toggle="modal"><img src="img/portfolio/p-5.jpg" class="img-fluid"></a></div>
+                <div class="col-sm-4 portfolio-item filter ai"><a href="#modal6" data-toggle="modal"><img src="img/portfolio/p-6.jpg" class="img-fluid"></a></div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Генерация 6 модальных окон (повторите для 1-6)
+        for(let i=1; i<=6; i++) {
+            document.write(`
+            <div class="modal fade" id="modal${i}" tabindex="-1">
+                <div class="modal-dialog"><div class="modal-content"><div class="modal-body">
+                    <h3>Сертификат ${i}</h3>
+                    <button data-dismiss="modal">Закрыть</button>
+                </div></div></div>
+            </div>`);
+        }
+    </script>
+
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+        $(".filter-b").click(function(){
+            var val = $(this).attr('data-filter');
+            val == "all" ? $('.filter').show() : ($(".filter").hide(), $('.filter.'+val).show());
+        });
+        function switchLang(lang) { document.body.className = lang; }
+    </script>
+</body>
+</html>
