@@ -185,9 +185,26 @@
             object-fit: cover; 
             object-position: top; 
         }
-        
-        .skill-item i {
-            color: #fff !important;
+
+        /* ==========================================
+           8. НАСТРОЙКА ЦВЕТОВ В СЕКЦИИ НАВЫКОВ
+           ========================================== */
+        .skill-cover.bg-primary {
+            background-color: #6b2828 !important; /* Заливка раздела - бордовый */
+        }
+        .skill-item-box {
+            background-color: #e9ecef !important; /* Квадраты - серые */
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        .skill-item-box i {
+            color: #6b2828 !important; /* Иконки - бордовые */
+            margin-bottom: 15px;
+        }
+        .skill-item-box h4, .skill-item-box p {
+            color: #ffffff !important; /* Текст (заголовки и подписи) - белый */
         }
     </style>
 </head>
@@ -391,37 +408,37 @@
           </h3>
           <div class="row text-center my-auto"> 
               <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item">
+                  <div class="skill-item-box">
                       <i class="fa fa-database fa-5x"></i>
-                      <h4 class="mt-3 text-white">
+                      <h4 class="mt-3">
                           <span class="ru">Базы данных</span><span class="en">Databases</span>
                       </h4>
-                      <p class="text-white">PostgreSQL, ClickHouse, SQL</p>
+                      <p>PostgreSQL, ClickHouse, SQL</p>
                   </div>
               </div>
               <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item">
+                  <div class="skill-item-box">
                       <i class="fa fa-exchange fa-5x"></i>
-                      <h4 class="mt-3 text-white">
+                      <h4 class="mt-3">
                           <span class="ru">Интеграции</span><span class="en">Integrations</span>
                       </h4>
-                      <p class="text-white">REST, SOAP, Kafka, RabbitMQ</p>
+                      <p>REST, SOAP, Kafka, RabbitMQ</p>
                   </div>
               </div>
               <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item">
+                  <div class="skill-item-box">
                       <i class="fa fa-sitemap fa-5x"></i>
-                      <h4 class="mt-3 text-white">
+                      <h4 class="mt-3">
                           <span class="ru">Анализ</span><span class="en">Analysis</span>
                       </h4>
-                      <p class="text-white">UML, BPMN 2.0, PlantUML</p>
+                      <p>UML, BPMN 2.0, PlantUML</p>
                   </div>
               </div>
               <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item">
+                  <div class="skill-item-box">
                       <i class="fa fa-server fa-5x"></i>
-                      <h4 class="mt-3 text-white">DWH & Infra</h4>
-                      <p class="text-white">ETL, Docker, Apache Airflow</p>
+                      <h4 class="mt-3">DWH & Infra</h4>
+                      <p>ETL, Docker, Apache Airflow</p>
                   </div>
               </div>
           </div>
@@ -438,8 +455,8 @@
                 <div class="mb-5 heading-border"></div>
               </div>
               <div class="col-md-12">
-                <p class="text-center ru">Здесь представлены сертификаты, подтверждающие мою квалификацию и навыки.</p>
-                <p class="text-center en">Here are the certificates confirming my qualifications and skills.</p>
+                <p class="text-center ru">Здесь представлены сертификаты, подтверждающие мою квалификацию и навыки</p>
+                <p class="text-center en">Here are the certificates confirming my qualifications and skills</p>
                 <div class="port-head-cont">
                   <button class="btn btn-general btn-green filter-b active" data-filter="all">
                       <span class="ru">Все сертификаты</span><span class="en">All certificates</span>
