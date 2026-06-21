@@ -15,224 +15,41 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/devicons/css/devicons.min.css" rel="stylesheet">
-    <link href="css/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
+    
     <style>
-        /* ==========================================
-           1. ШРИФТЫ И РАЗМЕР ИМЕНИ
-           ========================================== */
-        body, h1, h2, h3, h4, h5, h6, .content__name, .main-item__title, .title, .subheading {
-            font-family: 'Open Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
-        }
-
-        h1.mb-0 {
-            font-size: 4rem !important; 
-            line-height: 1.1;
-        }
-        @media (max-width: 768px) {
-            h1.mb-0 {
-                font-size: 2.8rem !important;
-            }
-        }
-
-        /* ==========================================
-           2. ВЫРАВНИВАНИЕ КАРТОЧЕК ОПЫТА ПО ВЫСОТЕ
-           ========================================== */
-        #experience .row {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .resume-item {
-            display: flex !important;
-            align-items: stretch;
-        }
-        .resume-item .card {
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            width: 100% !important;
-            height: calc(100% - 3rem); 
-            margin-bottom: 3rem !important;
-        }
-        .resume-content {
-            flex-grow: 1;
-        }
-
-        /* ==========================================
-           3. ИЗМЕНЕНИЕ ОСНОВНОГО ЦВЕТА
-           ========================================== */
-        .text-primary { color: #6b2828 !important; }
-        .bg-primary { background-color: #6b2828 !important; }
-        
-        .heading-border, .heading-border-light { 
-            background-color: #6b2828 !important; 
-            border-bottom: 2px solid #6b2828 !important; 
-        }
-        
-        .btn-general.btn-green {
-            color: #6b2828 !important;
-            border-color: #6b2828 !important;
-        }
-        .btn-general.btn-green.active, .btn-general.btn-green:hover { 
-            background-color: #6b2828 !important; 
-            border-color: #6b2828 !important; 
-            color: #ffffff !important;
-        }
-
-        .about-text { 
-            color: #343a40 !important; 
-            font-weight: 500;
-        }
-        
-        .contact-centered {
-            margin: 0 auto;
-            max-width: 600px;
-        }
-
-        /* ==========================================
-           4. ЖЕСТКОЕ ПЕРЕОПРЕДЕЛЕНИЕ СИНЕГО ЦВЕТА
-           ========================================== */
-        .portfolio-item .portfolio-link .caption-port {
-            background-color: rgba(107, 40, 40, 0.9) !important;
-        }
-        
-        .award .title, .award h5.title, .award h5 {
-            color: #6b2828 !important;
-        }
-        .main-award .award-icon {
-            background-color: #fff !important;
-            border-color: #6b2828 !important;
-            border: 3px solid #6b2828 !important;
-        }
-        .main-award .award:hover .award-icon {
-            background-color: #6b2828 !important;
-            border-color: #6b2828 !important;
-        }
-        
-        .main-award .award::before, .main-award .award::after,
-        .award-icon::before, .award-icon::after {
-            background-color: #6b2828 !important;
-            border-color: #6b2828 !important;
-        }
-        
-        .main-award .award-content::before,
-        .main-award .award-content::after {
-            background-color: #6b2828 !important;
-        }
-        .main-award .award:nth-child(odd) .award-content::before,
-        .main-award .award:nth-child(odd) .award-content::after {
-            border-left-color: #6b2828 !important;
-        }
-        .main-award .award:nth-child(even) .award-content::before,
-        .main-award .award:nth-child(even) .award-content::after {
-            border-right-color: #6b2828 !important;
-        }
-
-        /* ==========================================
-           5. ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ
-           ========================================== */
+        body.ru .lang.en { display: none !important; }
+        body.en .lang.ru { display: none !important; }
         .lang-switcher {
             position: fixed;
             top: 20px;
-            right: 30px;
-            z-index: 9999;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 15px;
-            border-radius: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 600;
-            border: 1px solid #eee;
+            right: 20px;
+            z-index: 1030;
         }
-        .lang-switcher a {
-            color: #343a40;
-            text-decoration: none;
-            padding: 0 5px;
-            transition: color 0.3s;
-            cursor: pointer;
+        .lang-switcher .btn {
+            padding: 5px 10px;
+            font-size: 14px;
         }
-        .lang-switcher a:hover {
-            color: #6b2828;
-        }
-        .lang-switcher a.active {
-            color: #6b2828;
-            text-decoration: underline;
-        }
-        .lang-switcher span {
-            color: #ccc;
-        }
-        @media (max-width: 991px) {
-            .lang-switcher {
-                top: 15px;
-                right: 80px; 
-                padding: 6px 12px;
-            }
-        }
-
-        /* ==========================================
-           6. ЛОГИКА ОТОБРАЖЕНИЯ ЯЗЫКОВ
-           ========================================== */
-        body.ru .en { display: none !important; }
-        body.en .ru { display: none !important; }
-
-        /* ==========================================
-           7. РАЗМЕР И ОБРЕЗКА КАРТИНОК ПРОЕКТОВ
-           ========================================== */
-        .portfolio-item img {
-            width: 100%;
-            aspect-ratio: 4 / 3; 
-            object-fit: cover; 
-            object-position: top; 
-        }
-
-        /* ==========================================
-           8. НАСТРОЙКА ЦВЕТОВ В СЕКЦИИ НАВЫКОВ
-           ========================================== */
-        .skill-cover {
-            background-color: #6b2828 !important; 
-        }
-        .skill-item-box {
-            background-color: #626d78 !important;
-            padding: 30px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            height: 100%;
-        }
-        .skill-item-box i {
-            color: #6b2828 !important;
-            margin-bottom: 15px;
-        }
-        .skill-item-box h4, .skill-item-box p {
-            color: #ffffff !important;
-        }
-       
-.skill-cover h3 {
-    color: #f8f9fa !important;
-}
     </style>
 </head>
 
 <body id="page-top" class="ru">
-    
+
     <div class="lang-switcher">
-        <a id="btn-ru" class="active" onclick="switchLang('ru')">RU</a> 
-        <span>|</span> 
-        <a id="btn-en" onclick="switchLang('en')">EN</a>
+        <button id="btn-ru" class="btn btn-sm btn-outline-primary active" onclick="switchLang('ru')">RU</button>
+        <button id="btn-en" class="btn btn-sm btn-outline-primary" onclick="switchLang('en')">EN</button>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none mx-0 px-0">
-            <h3 class="text-white">
-                <span class="ru">Таноя Банерджи</span>
-                <span class="en">Tanoya Banerjee</span>
-            </h3>
-        </span>
-        <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="Avatar">
-        </span>
-      </a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <span class="d-block d-lg-none">
+                <span class="lang ru">Таноя Банерджи</span>
+                <span class="lang en">Tanoya Banerjee</span>
+            </span>
+            <span class="d-none d-lg-block">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="Profile">
+            </span>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -240,32 +57,32 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#about">
-                        <span class="ru">Обо мне</span><span class="en">About</span>
+                        <span class="lang ru">О себе</span>
+                        <span class="lang en">About</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#experience">
-                        <span class="ru">Опыт работы</span><span class="en">Experience</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#skills">
-                        <span class="ru">Навыки</span><span class="en">Skills</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">
-                        <span class="ru">Сертификаты</span><span class="en">Certificates</span>
+                        <span class="lang ru">Опыт работы</span>
+                        <span class="lang en">Experience</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#education">
-                        <span class="ru">Образование</span><span class="en">Education</span>
+                        <span class="lang ru">Образование</span>
+                        <span class="lang en">Education</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">
-                        <span class="ru">Контакты</span><span class="en">Contact</span>
+                    <a class="nav-link js-scroll-trigger" href="#skills">
+                        <span class="lang ru">Навыки</span>
+                        <span class="lang en">Skills</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#awards">
+                        <span class="lang ru">Сертификаты</span>
+                        <span class="lang en">Certifications</span>
                     </a>
                 </li>
             </ul>
@@ -274,466 +91,229 @@
 
     <div class="container-fluid p-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-          <div class="my-auto" >
-              <h1 class="mb-0">
-                  <span class="ru">Таноя</span><span class="en">Tanoya</span>
-                  <span class="text-primary ru">Банерджи</span><span class="text-primary en">Banerjee</span>
-              </h1>
-              <div class="subheading mb-5">
-                  <span class="ru">Ведущий системный аналитик (DWH & AI) · Москва · </span>
-                  <span class="en">Senior System Analyst (DWH & AI) · Moscow · </span>
-                  <a href="mailto:tanoyabaner@mail.ru" class="text-primary">tanoyabaner@mail.ru</a>
-              </div>
-              <p class="mb-4 about-text ru" style="max-width: 700px;">
-                  Более 4 лет опыта работы в качестве Senior System и Business Analyst в высоконагруженных DWH, корпоративных интеграциях и AI-платформах. Имею сильный бэкграунд в PM & BA: декомпозирую комплексные требования, оцениваю риски и управляю ожиданиями стейкхолдеров
-              </p>
-              <p class="mb-4 about-text en" style="max-width: 700px;">
-                  Over 4 years of experience as a Senior System and Business Analyst in high-load DWH, corporate integrations, and AI platforms. Strong background in PM & BA: decomposing complex requirements, assessing risks, and managing stakeholder expectations
-              </p>
-
-              <p class="mb-5 about-text ru" style="max-width: 700px;">
-                  Отлично справляюсь с одновременным ведением нескольких проектов. Умею находить общий язык со всеми участниками процесса и успешно улаживаю конфликты (Бизнес vs ИБ vs Архитектура)
-              </p>
-              <p class="mb-5 about-text en" style="max-width: 700px;">
-                  I excel at managing multiple projects simultaneously. I easily find common ground with all process participants and successfully resolve conflicts (Business vs. InfoSec vs. Architecture)
-              </p>
-              
-              <ul class="list-inline list-social-icons mb-0">
-                  <li class="list-inline-item">
-                      <a href="https://www.linkedin.com/in/tanoya-banerjee-772018372" target="_blank">
-                          <span class="fa-stack fa-lg">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                          </span>
-                      </a>
-                  </li>
-                  <li class="list-inline-item">
-                      <a href="https://t.me/Tanoyaa" target="_blank">
-                          <span class="fa-stack fa-lg">
-                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                              <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
-                          </span>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-      </section>
-
-    <section class="resume-section p-3 p-lg-5 " id="experience">
-          <div class="row my-auto">
-              <div class="col-12">
-                <h2 class="text-center">
-                    <span class="ru">Опыт работы</span><span class="en">Experience</span>
-                </h2>
-                <div class="mb-5 heading-border"></div>
-              </div>
-              
-              <div class="resume-item col-md-6 col-sm-12 "> 
-                <div class="card mx-0 p-4 mb-5" style="border-color: #17a2b8; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                  <div class="resume-content mr-auto">
-                      <h4 class="mb-3"><i class="fa fa-database mr-3 text-info"></i> Senior System Analyst DWH & AI</h4>
-                      <h5 class="mb-2">
-                          <span class="ru">АО "НСИС" (ДО ЦБ РФ)</span>
-                          <span class="en">JSC "NSIS" (Subsidiary of CBR)</span>
-                      </h5>
-                      <p class="ru">Разрешила противоречия стейкхолдеров (Бизнес vs ИБ) для запуска генеративного AI-ассистента на LLM (Qwen/Claude). Ускорила работу витрин данных в 3 раза за счет миграции с PostgreSQL на ClickHouse. Спроектировала RAG-пайплайны с векторным поиском</p>
-                      <p class="en">Resolved stakeholder conflicts (Business vs. InfoSec) to launch a generative AI assistant based on LLMs (Qwen/Claude). Accelerated data mart performance by 3x by migrating from PostgreSQL to ClickHouse. Designed RAG pipelines with vector search</p>
-                  </div>
-                  <div class="resume-date text-md-right">
-                      <span class="text-primary ru">Апр 2026 - н.вр.</span>
-                      <span class="text-primary en">Apr 2026 - Present</span>
-                  </div>
-                </div>  
-              </div>
-              
-              <div class="resume-item col-md-6 col-sm-12">
-                <div class="card mx-0 p-4 mb-5" style="border-color: #ffc107; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                  <div class="resume-content mr-auto">
-                      <h4 class="mb-3"><i class="fa fa-sitemap mr-3 text-warning"></i> Senior System Analyst</h4>
-                      <h5 class="mb-2">
-                          <span class="ru">АО "Топ Системы" (лидер в PLM в РФ)</span>
-                          <span class="en">JSC "Top Systems" (PLM leader in RF)</span>
-                      </h5>
-                      <p class="ru">Устранила интеграционные узкие места при миграции данных Роскосмоса: окно миграции меньше на 60%, нагрузка на CPU на 50%. Разработала интеграцию с 1C ERP через REST API, ускорив выпуск техдокументации в 2 раза</p>
-                      <p class="en">Eliminated integration bottlenecks during the Roscosmos data migration: reduced migration window by 60% and CPU load by 50%. Developed integration with 1C ERP via REST API, accelerating technical documentation release by 2x</p>
-                  </div>
-                  <div class="resume-date text-md-right">
-                      <span class="text-primary ru">Дек 2024 - Апр 2026</span>
-                      <span class="text-primary en">Dec 2024 - Apr 2026</span>
-                  </div>
-                </div>  
-              </div>
-              
-              <div class="resume-item col-md-6 col-sm-12">
-                <div class="card mx-0 p-4 mb-5" style="border-color: #28a745; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                  <div class="resume-content mr-auto">
-                      <h4 class="mb-3"><i class="fa fa-code-fork mr-3 text-success"></i> Middle System Analyst</h4>
-                      <h5 class="mb-2">
-                          <span class="ru">ООО "Группа Полипластик" (лидер в ПНДТ в РФ)</span>
-                          <span class="en">LLC "Polyplastic Group"</span>
-                      </h5>
-                      <p class="ru">Сократила TTM на 50% и устранила баги на проде, автоматизировав интеграционные тесты через Postman в CI/CD. Спроектировала физическую и логическую модель данных PostgreSQL (3НФ), исключив аномалии обновлений</p>
-                      <p class="en">Reduced TTM by 50% and eliminated production bugs by automating integration tests via Postman in CI/CD. Designed physical and logical data models in PostgreSQL (3NF), eliminating update anomalies</p>
-                  </div>
-                  <div class="resume-date text-md-right">
-                      <span class="text-primary ru">Июн 2023 - Дек 2024</span>
-                      <span class="text-primary en">Jun 2023 - Dec 2024</span>
-                  </div>
-                </div>  
-              </div>
-              
-              <div class="resume-item col-md-6 col-sm-12">
-                <div class="card mx-0 p-4 mb-5" style="border-color: #2196f3; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-                  <div class="resume-content mr-auto">
-                      <h4 class="mb-3"><i class="fa fa-cogs mr-3 text-primary"></i> Системный аналитик SAP</h4>
-                      <h5 class="mb-2">
-                          <span class="ru">АО НИИСТ</span>
-                          <span class="en">JSC "NIIST"</span>
-                      </h5>
-                      <p class="ru">Внедрила модуль планирования ERP в срок, сократив рутинные трудозатраты смежных отделов. Снизила процент доработок на UAT, внедрив матрицу трассируемости требований. Разрабатывала ТЗ и маппинг данных</p>
-                      <p class="en">Implemented the ERP planning module on time, reducing routine labor costs for adjacent departments. Decreased the UAT rework rate by introducing a requirements traceability matrix. Developed technical specs and data mapping</p>
-                  </div>
-                  <div class="resume-date text-md-right">
-                      <span class="text-primary ru">Фев 2022 - Апр 2023</span>
-                      <span class="text-primary en">Feb 2022 - Apr 2023</span>
-                  </div>
-                </div>  
-              </div>
-              
-          </div>
-      </section>
-
-    <section class=" d-flex flex-column" id="skills">
-         <div class="p-lg-5 p-3 skill-cover">
-          <h3 class="text-center mb-5">
-              <span class="ru">Ключевой стек технологий</span>
-              <span class="en">Key Tech Stack</span>
-          </h3>
-          <div class="row text-center my-auto"> 
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item-box">
-                      <i class="fa fa-database fa-5x"></i>
-                      <h4 class="mt-3">
-                          <span class="ru">Базы данных</span><span class="en">Databases</span>
-                      </h4>
-                      <p>PostgreSQL, ClickHouse, SQL</p>
-                  </div>
-              </div>
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item-box">
-                      <i class="fa fa-exchange fa-5x"></i>
-                      <h4 class="mt-3">
-                          <span class="ru">Интеграции</span><span class="en">Integrations</span>
-                      </h4>
-                      <p>REST, SOAP, Kafka, RabbitMQ</p>
-                  </div>
-              </div>
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item-box">
-                      <i class="fa fa-sitemap fa-5x"></i>
-                      <h4 class="mt-3">
-                          <span class="ru">Анализ</span><span class="en">Analysis</span>
-                      </h4>
-                      <p>UML, BPMN 2.0, PlantUML</p>
-                  </div>
-              </div>
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <div class="skill-item-box">
-                      <i class="fa fa-server fa-5x"></i>
-                      <h4 class="mt-3">DWH & Infra</h4>
-                      <p>ETL, Docker, Apache Airflow</p>
-                  </div>
-              </div>
-          </div>
-         </div> 
-      </section>
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="portfolio"> 
-          <div class="row my-auto">
-              <div class="col-12">
-                <h2 class="text-center">
-                    <span class="ru">Сертификаты</span>
-                    <span class="en">Certificates</span>
-                </h2>
-                <div class="mb-5 heading-border"></div>
-              </div>
-              <div class="col-md-12">
-                <div class="port-head-cont">
-                  <button class="btn btn-general btn-green filter-b active" data-filter="all">
-                      <span class="ru">Все сертификаты</span><span class="en">All certificates</span>
-                  </button>
-                  <button class="btn btn-general btn-green filter-b" data-filter="analytics">
-                      <span class="ru">PDM</span><span class="en">PDM</span>
-                  </button>
-                  <button class="btn btn-general btn-green filter-b" data-filter="architecture">
-                      <span class="ru">AI</span><span class="en">AI</span>
-                  </button>
+        <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+            <div class="my-auto">
+                <h1 class="mb-0">
+                    <span class="lang ru">Таноя <span class="text-primary">Банерджи</span></span>
+                    <span class="lang en">Tanoya <span class="text-primary">Banerjee</span></span>
+                </h1>
+                <div class="subheading mb-5">
+                    <span class="lang ru">Старший системный аналитик · Москва · </span>
+                    <span class="lang en">Senior System Analyst · Moscow · </span>
+                    <a href="mailto:tanoya.b@example.com">tanoya.b@example.com</a>
                 </div>
-              </div>
-          </div>
-          
-          <div class="row my-auto mt-4">
-              <div class="col-sm-4 portfolio-item filter analytics">
-                  <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
-                      <div class="caption-port">
-                          <div class="caption-port-content">
-                              <i class="fa fa-search-plus fa-3x"></i>
-                          </div>
-                      </div>
-                      <img class="img-fluid" src="img/portfolio/p-1.jpg" alt="Сертификат 1">
-                  </a>
-              </div>
-              
-              <div class="col-sm-4 portfolio-item filter analytics">
-                  <a class="portfolio-link" href="#portfolioModal2" data-toggle="modal">
-                      <div class="caption-port">
-                          <div class="caption-port-content">
-                              <i class="fa fa-search-plus fa-3x"></i>
-                          </div>
-                      </div>
-                      <img class="img-fluid" src="img/portfolio/p-2.jpg" alt="Сертификат 2">
-                  </a>
-              </div>
-              
-              <div class="col-sm-4 portfolio-item filter analytics">
-                  <a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
-                      <div class="caption-port">
-                          <div class="caption-port-content">
-                              <i class="fa fa-search-plus fa-3x"></i>
-                          </div>
-                      </div>
-                      <img class="img-fluid" src="img/portfolio/p-3.jpg" alt="Сертификат 3">
-                  </a>
-              </div>
-              
-              <div class="col-sm-4 portfolio-item filter architecture">
-                  <a class="portfolio-link" href="#" data-toggle="modal">
-                      <div class="caption-port"><div class="caption-port-content"><i class="fa fa-plus fa-3x"></i></div></div>
-                      <img class="img-fluid" src="img/portfolio/p-4.jpg" alt="AI Cert 1">
-                  </a>
-              </div>
-              <div class="col-sm-4 portfolio-item filter architecture">
-                  <a class="portfolio-link" href="#" data-toggle="modal">
-                      <div class="caption-port"><div class="caption-port-content"><i class="fa fa-plus fa-3x"></i></div></div>
-                      <img class="img-fluid" src="img/portfolio/p-5.jpg" alt="AI Cert 2">
-                  </a>
-              </div>
-              <div class="col-sm-4 portfolio-item filter architecture">
-                  <a class="portfolio-link" href="#" data-toggle="modal">
-                      <div class="caption-port"><div class="caption-port-content"><i class="fa fa-plus fa-3x"></i></div></div>
-                      <img class="img-fluid" src="img/portfolio/p-6.jpg" alt="AI Cert 3">
-                  </a>
-              </div>
-          </div>
-      </section>
+                <p class="mb-5">
+                    <span class="lang ru">Опытный системный и бизнес-аналитик со специализацией в области построения хранилищ данных (DWH), интеграционных решений и внедрения ИИ-технологий.</span>
+                    <span class="lang en">Experienced System and Business Analyst specializing in Data Warehouse (DWH) architecture, enterprise integrations, and AI implementations.</span>
+                </p>
+                <ul class="list-inline list-social-icons mb-0">
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-          <div class="row my-auto">
-              <div class="col-12">
-                <h2 class="text-center">
-                    <span class="ru">Образование</span><span class="en">Education</span>
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+            <div class="my-auto">
+                <h2 class="mb-5">
+                    <span class="lang ru">Опыт работы</span>
+                    <span class="lang en">Experience</span>
                 </h2>
-                <div class="mb-5 heading-border"></div>
-              </div> 
-              <div class="main-award" id="award-box">
-                  <div class="award">
-                      <div class="award-icon"></div>
-                      <div class="award-content">
-                          <span class="date text-primary">2019 - 2023</span>
-                          <h5 class="title">
-                              <span class="ru">Бакалавриат</span><span class="en">Bachelor's Degree</span>
-                          </h5>
-                          <p class="description ru">
-                              РГУ нефти и газа им. И.М. Губкина. Инженерный факультет<br>
-                              <strong>Диплом с отличием</strong>
-                          </p>
-                          <p class="description en">
-                              Gubkin Russian State University of Oil and Gas. Faculty of Engineering<br>
-                              <strong>Diploma with honors</strong>
-                          </p>
-                      </div>
-                  </div>
-                  <div class="award">
-                      <div class="award-icon"></div>
-                      <div class="award-content">
-                          <span class="date text-primary">2023 - 2025</span>
-                          <h5 class="title">
-                              <span class="ru">Магистратура</span><span class="en">Master's Degree</span>
-                          </h5>
-                          <p class="description ru">
-                              РГУ нефти и газа им. И.М. Губкина. Инженерный факультет<br>
-                              <strong>Диплом с отличием</strong><br>
-                              Автор научных публикаций в рецензируемых журналах, индексируемых в Scopus (Q2) и Web of Science
-                          </p>
-                          <p class="description en">
-                              Gubkin Russian State University of Oil and Gas. Faculty of Engineering<br>
-                              <strong>Diploma with honors</strong><br>
-                              Author of scientific publications in peer-reviewed journals indexed in Scopus (Q2) and Web of Science
-                          </p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section> 
 
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column">
-          <div class="row my-auto" id="contact"> 
-            <div class="col-12 contact-centered mt-5"> 
-              <div class="contact-cont2 text-center"> 
-                <h2 class="mb-4">
-                    <span class="ru">Связаться со мной</span><span class="en">Get in Touch</span>
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">Senior System Analyst DWH & AI</h3>
+                        <div class="subheading mb-3">АО НСИС</div>
+                        <p>
+                            <span class="lang ru">Проектирование архитектуры DWH, интеграция AI-компонентов и сквозных бизнес-процессов.</span>
+                            <span class="lang en">Designing DWH architecture, integrating AI components, and end-to-end business workflows.</span>
+                        </p>
+                    </div>
+                    <div class="resume-date text-md-right">
+                        <span class="text-primary">
+                            <span class="lang ru">Апрель 2026 - Наст. время</span>
+                            <span class="lang en">April 2026 - Present</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+            <div class="my-auto">
+                <h2 class="mb-5">
+                    <span class="lang ru">Образование</span>
+                    <span class="lang en">Education</span>
                 </h2>
-                <div class="heading-border mx-auto mb-5"></div>
+
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">РГУ нефти и газа (НИУ) имени И.М. Губкина</h3>
+                        <div class="subheading mb-3">
+                            <span class="lang ru">Высшее образование (Диплом с отличием)</span>
+                            <span class="lang en">Higher Education (Graduated with Honors)</span>
+                        </div>
+                    </div>
+                    <div class="resume-date text-md-right">
+                        <span class="text-primary">2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+            <div class="my-auto">
+                <h2 class="mb-5">
+                    <span class="lang ru">Навыки</span>
+                    <span class="lang en">Skills</span>
+                </h2>
+
+                <div class="subheading mb-3">
+                    <span class="lang ru">Инструменты и технологии</span>
+                    <span class="lang en">Tools & Technologies</span>
+                </h2>
+                <ul class="list-inline list-icons">
+                    <li class="list-inline-item"><i class="devicons devicons-database"></i> SQL / DWH</li>
+                    <li class="list-inline-item"><i class="devicons devicons-git"></i> Git</li>
+                    <li class="list-inline-item"><i class="devicons devicons-linux"></i> Linux</li>
+                    <li class="list-inline-item"><i class="devicons devicons-docker"></i> Docker</li>
+                </ul>
+
+                <div class="subheading mb-3">
+                    <span class="lang ru">Профессиональные фильтры</span>
+                    <span class="lang en">Professional Filters</span>
+                </div>
+                <div class="mb-4">
+                    <button class="btn btn-secondary filter-b" data-filter="all">All</button>
+                    <button class="btn btn-secondary filter-b" data-filter="ai-tech">AI & Agents</button>
+                    <button class="btn btn-secondary filter-b" data-filter="dwh">DWH & PLM/MDM</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+            <div class="my-auto">
+                <h2 class="mb-5">
+                    <span class="lang ru">Сертификаты и Обучение</span>
+                    <span class="lang en">Certifications & Training</span>
+                </h2>
+
+                <div class="subheading mb-3">
+                    <span class="lang ru">Сертификаты</span>
+                    <span class="lang en">Certifications & Training</span>
+                </div>
                 
-                <div class="contact-add contact-box-desc mb-4">
-                  <h3 class="ru"><i class="fa fa-map-marker text-primary fa-2x mb-2"></i><br> Локация</h3>
-                  <h3 class="en"><i class="fa fa-map-marker text-primary fa-2x mb-2"></i><br> Location</h3>
-                  <p class="ru">Москва, Россия</p>
-                  <p class="en">Moscow, Russia</p>
-                </div>
-                <div class="contact-phone contact-side-desc contact-box-desc mb-4">
-                  <h3 class="ru"><i class="fa fa-phone text-primary fa-2x mb-2"></i><br> Телефон</h3>
-                  <h3 class="en"><i class="fa fa-phone text-primary fa-2x mb-2"></i><br> Phone</h3>
-                  <p>+7 (991) 582-08-11</p>
-                </div>
-                <div class="contact-mail contact-side-desc contact-box-desc">
-                  <h3><i class="fa fa-envelope-o text-primary fa-2x mb-2"></i><br> Email</h3>
-                  <p><a href="mailto:tanoyabaner@mail.ru" class="text-primary">tanoyabaner@mail.ru</a></p>
-                  
-                  <ul class="list-inline social-icon-f top-data mt-4">
-                    <li>
-                        <a href="https://www.linkedin.com/in/tanoya-banerjee-772018372" target="_blank">
-                            <i class="fa top-social fa-linkedin" style="color: #6b2828; border-color:#6b2828;"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://t.me/Tanoyaa" target="_blank">
-                            <i class="fa top-social fa-telegram" style="color: #6b2828; border-color:#6b2828;"></i>
-                        </a>
-                    </li>
-                  </ul>
-                  
-                </div>
-              </div>
-            </div> 
-          </div>
-      </section>
-
-    </div>
-
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" >
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="close-modal" data-dismiss="modal">
-                  <div class="lr">
-                      <div class="rl"></div>
-                  </div>
-              </div>
-              <div class="container">
-                  <div class="row">
-                          <div class="modal-body">
-                              <div class="title-bar">
-                                <div class="col-md-12">
-                                  <h2 class="text-center">
-                                      <span class="ru">Сертификат PDM</span><span class="en">PDM Certificate</span>
-                                  </h2>
-                                  <div class="heading-border"></div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <img class="img-fluid img-centered" src="img/portfolio/p-1.jpg" alt="">
-                                </div>
-                                <div class="col-md-6">
-                                  <p class="ru">Описание сертификата PDM</p>
-                                  <p class="en">PDM Certificate description</p>
-                                  <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
-                                      <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
-                                  </button>
-                              </div>
-                            </div>
-                          </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
-    
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" >
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
+                <div class="row text-center text-lg-left spec">
+                    <div class="col-lg-4 col-md-6 col-12 filter ai-tech mb-4">
+                        <div class="h-100 card-body img-portfolio" style="border: 1px solid #eee; border-radius: 5px; padding: 15px;">
+                            <a href="img/p-4.jpg" title="AI Foundations — OpenAI Academy">
+                                <img class="img-fluid img-thumbnail" src="img/p-4.jpg" alt="AI Foundations">
+                            </a>
+                            <h5 class="mt-2">AI Foundations</h5>
+                            <p class="text-muted" style="font-size: 13px; margin-bottom: 5px;">OpenAI Academy (06.2026)</p>
+                            <p class="card-text text-left" style="font-size: 14px; line-height: 1.4;">
+                                <span class="lang ru">Подтверждает освоение фундаментальных принципов построения и работы современных моделей искусственного интеллекта.</span>
+                                <span class="lang en">Confirms mastery of the fundamental principles of building and operating modern artificial intelligence models.</span>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                            <div class="modal-body">
-                                <div class="title-bar">
-                                  <div class="col-md-12">
-                                    <h2 class="text-center">
-                                      <span class="ru">Сертификат PDM</span><span class="en">PDM Certificate</span>
-                                    </h2>
-                                    <div class="heading-border"></div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <img class="img-fluid img-centered" src="img/portfolio/p-2.jpg" alt="">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <p class="ru">Описание сертификата PDM</p>
-                                    <p class="en">PDM Certificate description</p>
-                                    <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
-                                        <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
-                                    </button>
-                                </div>
-                              </div>
-                            </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 filter ai-tech mb-4">
+                        <div class="h-100 card-body img-portfolio" style="border: 1px solid #eee; border-radius: 5px; padding: 15px;">
+                            <a href="img/p-5.jpg" title="Applied AI Foundations — OpenAI Academy">
+                                <img class="img-fluid img-thumbnail" src="img/p-5.jpg" alt="Applied AI Foundations">
+                            </a>
+                            <h5 class="mt-2">Applied AI Foundations</h5>
+                            <p class="text-muted" style="font-size: 13px; margin-bottom: 5px;">OpenAI Academy (06.2026)</p>
+                            <p class="card-text text-left" style="font-size: 14px; line-height: 1.4;">
+                                <span class="lang ru">Подтверждает навыки практического применения и интеграции инструментов ИИ в прикладные ИТ-решения и бизнес-процессы.</span>
+                                <span class="lang en">Validates skills in the practical application and integration of AI tools into production IT solutions and business processes.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 filter ai-tech mb-4">
+                        <div class="h-100 card-body img-portfolio" style="border: 1px solid #eee; border-radius: 5px; padding: 15px;">
+                            <a href="img/p-6.jpg" title="Agents and Workflows — OpenAI Academy">
+                                <img class="img-fluid img-thumbnail" src="img/p-6.jpg" alt="Agents and Workflows">
+                            </a>
+                            <h5 class="mt-2">Agents and Workflows</h5>
+                            <p class="text-muted" style="font-size: 13px; margin-bottom: 5px;">OpenAI Academy (06.2026)</p>
+                            <p class="card-text text-left" style="font-size: 14px; line-height: 1.4;">
+                                <span class="lang ru">Подтверждает квалификацию в области проектирования автономных ИИ-агентов и настройки сложных автоматизированных рабочих процессов.</span>
+                                <span class="lang en">Confirms qualification in designing autonomous AI agents and configuring complex automated workflows.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 filter dwh mb-4">
+                        <div class="h-100 card-body img-portfolio" style="border: 1px solid #eee; border-radius: 5px; padding: 15px;">
+                            <a href="img/p-1.jpg" title="Управление мастер-данными и администрирование в T-FLEX DOCs. MDM">
+                                <img class="img-fluid img-thumbnail" src="img/p-1.jpg" alt="T-FLEX DOCs MDM">
+                            </a>
+                            <h5 class="mt-2" style="font-size: 15px;">T-FLEX DOCs. MDM</h5>
+                            <p class="text-muted" style="font-size: 12px; margin-bottom: 5px;">
+                                <span class="lang ru">АО «Топ Системы» (12.2025)<br><b class="text-success">Специалист</b></span>
+                                <span class="lang en">Top Systems JSC (12.2025)<br><b class="text-success">Certified Specialist</b></span>
+                            </p>
+                            <p class="card-text text-left" style="font-size: 13px; line-height: 1.4;">
+                                <span class="lang ru">Подтверждает глубокие знания методологии MDM и практические навыки администрирования систем управления нормативно-справочной информацией на базе платформы T-FLEX.</span>
+                                <span class="lang en">Confirms deep knowledge of MDM methodology and practical skills in administering master data management systems based on the T-FLEX platform.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 filter dwh mb-4">
+                        <div class="h-100 card-body img-portfolio" style="border: 1px solid #eee; border-radius: 5px; padding: 15px;">
+                            <a href="img/p-2.jpg" title="Администрирование T-FLEX DOCs">
+                                <img class="img-fluid img-thumbnail" src="img/p-2.jpg" alt="T-FLEX DOCs Administration">
+                            </a>
+                            <h5 class="mt-2" style="font-size: 15px;">Администрирование T-FLEX DOCs</h5>
+                            <p class="text-muted" style="font-size: 12px; margin-bottom: 5px;">
+                                <span class="lang ru">АО «Топ Системы» (12.2025)<br><b class="text-success">Специалист</b></span>
+                                <span class="lang en">Top Systems JSC (12.2025)<br><b class="text-success">Certified Specialist</b></span>
+                            </p>
+                            <p class="card-text text-left" style="font-size: 13px; line-height: 1.4;">
+                                <span class="lang ru">Квалификационный сертификат, подтверждающий навыки развертывания, настройки, конфигурирования и системного администрирования платформы T-FLEX DOCs.</span>
+                                <span class="lang en">A qualification certificate confirming skills in deployment, setup, configuration, and system administration of the T-FLEX DOCs platform.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 filter dwh mb-4">
+                        <div class="h-100 card-body img-portfolio" style="border: 1px solid #eee; border-radius: 5px; padding: 15px;">
+                            <a href="img/p-3.jpg" title="Модуль обмена данными T-FLEX DOCs">
+                                <img class="img-fluid img-thumbnail" src="img/p-3.jpg" alt="T-FLEX DOCs Data Exchange">
+                            </a>
+                            <h5 class="mt-2" style="font-size: 15px;">Модуль обмена данными T-FLEX DOCs</h5>
+                            <p class="text-muted" style="font-size: 12px; margin-bottom: 5px;">
+                                <span class="lang ru">АО «Топ Системы» (12.2025)<br><b class="text-info">Эксперт</b></span>
+                                <span class="lang en">Top Systems JSC (12.2025)<br><b class="text-info">Certified Expert</b></span>
+                            </p>
+                            <p class="card-text text-left" style="font-size: 13px; line-height: 1.4;">
+                                <span class="lang ru">Экспертный сертификат, подтверждающий компетенции в области проектирования и настройки интеграций, сквозного обмена данными и корпоративных интеграционных интерфейсов.</span>
+                                <span class="lang en">An expert certificate confirming competencies in designing and configuring integrations, end-to-end data exchange, and enterprise integration interfaces.</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true" >
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                            <div class="modal-body">
-                                <div class="title-bar">
-                                  <div class="col-md-12">
-                                    <h2 class="text-center">
-                                        <span class="ru">Сертификат PDM</span><span class="en">PDM Certificate</span>
-                                    </h2>
-                                    <div class="heading-border"></div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <img class="img-fluid img-centered" src="img/portfolio/p-3.jpg" alt="">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <p class="ru">Описание сертификата PDM</p>
-                                    <p class="en">PDM Certificate description</p>
-                                    <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
-                                        <i class="fa fa-times"></i> <span class="ru">Закрыть</span><span class="en">Close</span>
-                                    </button>
-                                </div>
-                              </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
+
     </div>
 
     <script src="js/jquery/jquery.min.js"></script>
@@ -769,7 +349,6 @@
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
             document.title = lang === 'ru' ? 'Таноя Банерджи — Портфолио' : 'Tanoya Banerjee — Portfolio';
         }
-    </script> 
+    </script>
 </body>
-
 </html>
